@@ -1,0 +1,5 @@
+# Redirect all HTTP to HTTPS
+http://*  https://uthmanportfolio.me 301!
+
+# Redirect www to non-www
+https://www.uthmanportfolio.me/*  https://uthmanportfolio.me/:splat 301!
