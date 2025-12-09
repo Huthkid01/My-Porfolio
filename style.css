@@ -216,7 +216,11 @@ body.dark .project-card {
   flex-wrap: wrap;
 }
 
-body.dark{
+.btn-secondary {
+  background-color: #444;
+}
+  
+body.dark .btn-secondary{
   background-color: #ddd;
   color: #111;
 }
