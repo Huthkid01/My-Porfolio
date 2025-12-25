@@ -308,10 +308,11 @@ body.dark {
   --snow-color: #ffffff;
 }
 
-/* Hide snow on small phones for performance */
+/* Mobile optimization: smaller flakes but still visible */
 @media (max-width: 480px) {
-  #snow {
-    display: none;
+  .snowflake {
+    font-size: 8px !important;
+    opacity: 0.6 !important;
   }
 }
 
