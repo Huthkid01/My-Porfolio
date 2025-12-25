@@ -271,6 +271,50 @@ body.dark .btn-secondary {
   to { opacity: 0; transform: translateY(10px); }
 }
 
+/* ===== Snow Effect ===== */
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Snowflakes styled dynamically */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: var(--snow-color);
+  user-select: none;
+  animation: fall linear infinite;
+  transition: color 0.3s ease;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Snow color for light mode */
+:root {
+  --snow-color: #bfc5cc;
+}
+
+/* Snow color for dark mode */
+body.dark {
+  --snow-color: #ffffff;
+}
+
+/* Hide snow on small phones for performance */
+@media (max-width: 480px) {
+  #snow {
+    display: none;
+  }
+}
+
 /* ===== Responsive Design ===== */
 
 /* 📱 Small Phones (up to 480px) */
