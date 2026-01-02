@@ -25,6 +25,17 @@ document.querySelectorAll('.view-more-arrow').forEach(arrow => {
     }
 });
 
+// Loading screen
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('hide');
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500); // Wait for transition to complete
+    }, 300); // Show loader for 0.3 seconds
+});
+
 // Scroll to top on refresh
 window.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
