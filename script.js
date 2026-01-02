@@ -36,6 +36,75 @@ window.addEventListener('load', () => {
     }, 300); // Show loader for 0.3 seconds
 });
 
+// Customer Support Chat Widget
+document.addEventListener('DOMContentLoaded', () => {
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatWindow = document.getElementById('chat-window');
+    const chatClose = document.getElementById('chat-close');
+    const chatInput = document.getElementById('chat-input-text');
+    const chatSend = document.getElementById('chat-send');
+    const chatMessages = document.querySelector('.chat-messages');
+
+    // Toggle chat window
+    chatToggle.addEventListener('click', () => {
+        chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Close chat window
+    chatClose.addEventListener('click', () => {
+        chatWindow.style.display = 'none';
+    });
+
+    // Send message function
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message) {
+            // Add user message to chat
+            addMessage(message, 'user');
+
+            // Clear input
+            chatInput.value = '';
+
+            // Directly open WhatsApp with the user's message
+            const whatsappUrl = `https://wa.me/2348144170968?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    }
+
+    // Add message to chat
+    function addMessage(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.innerHTML = `<p>${text}</p>`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Send on button click
+    chatSend.addEventListener('click', sendMessage);
+
+    // Send on Enter key
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+});
+
+// Hero image flip toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const heroImg = document.querySelector('.hero-image img');
+    if (heroImg) {
+        heroImg.addEventListener('click', () => {
+            heroImg.classList.toggle('flipped');
+        });
+        heroImg.addEventListener('touchstart', () => {
+            heroImg.classList.toggle('flipped');
+        });
+    }
+});
+
 // Scroll to top on refresh
 window.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
