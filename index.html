@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <a href="#main-content" id="skip-link">Skip to main content</a>
+    <header>
+        <nav>
+            <div class="logo">Odusanya Uthman</div>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Odusanya Uthman</span></h1>
+            <h2>Frontend Web Developer</h2>
+            <p>Creating beautiful and functional web experiences</p>
+            <a href="images/resume.pdf" download class="btn btn-secondary">My Resume</a>
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Hire Me</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/myimage.png" alt="Odusanya Uthman">
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a passionate web developer specializing in frontend development. I excel in creating intuitive and visually appealing user interfaces using modern technologies. With several years of experience, I have built responsive websites and web applications that provide excellent user experiences. My goal is to craft engaging digital solutions that combine functionality with aesthetic design.</p>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>My Experience</h2>
+            <p>As a freelance frontend developer with 3 years of experience, I work remotely to create modern, responsive web applications.</p>
+            <div class="view-more-container">
+                <span class="view-more-arrow" data-target="experience-content">▼ View More</span>
+            </div>
+            <div id="experience-content" class="collapsible-content" style="display: none;">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Freelance Frontend Developer</h3>
+                        <p class="company">Remote Worker</p>
+                        <p class="period">2021 - Present</p>
+                        <p>Specializing in modern web technologies, creating responsive and interactive web applications for clients worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill hidden-skill">Figma</div>
+                <div class="skill hidden-skill">Git</div>
+                <div class="skill hidden-skill">GitHub</div>
+                <div class="skill hidden-skill">Supabase</div>
+                <div class="skill hidden-skill">API Integration</div>
+            </div>
+            <div class="view-more-container">
+                <span class="view-more-arrow" id="skills-toggle">▼ View More</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                    <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="images/luxegloss.png" alt="Luxe Gloss E-Commerce landing page" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>Luxe Gloss E-Commerce landing page </h3>
+                        <p>A modern lip gloss landing page where customers select quantities, make payments online, and are redirected to WhatsApp to confirm their orders with the owner.</p>
+                        <div class="project-buttons">
+                            <a href="https://luxe-gloss.netlify.app/" target="_blank" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="images/Trendware.png" alt="Trendware – Multi‑Currency Fashion Store">
+                    </div>
+                    <div class="project-info">
+                        <h3>Trendware – Multi‑Currency Fashion Store.</h3>
+                        <p>Modern fashion store with multi-currency support (NGN, USD, GBP). Features shopping cart, payment integration, and admin dashboard.</p>
+                        <div class="project-buttons">
+                            <a href="https://trendware.netlify.app/" target="_blank" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/luxestay.png" alt="LuxeStay Apartments">
+                    </div>
+                    <div class="project-info">
+                        <h3>LuxeStay Apartments </h3>
+                        <p>A luxury apartment booking website built with HTML, CSS, and JavaScript, featuring image galleries, booking forms, and WhatsApp payment confirmation.</p>
+                        <div class="project-buttons">
+                            <a href="https://luxestayapartment.netlify.app/" target="_blank" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="images/Smartglow.png" alt="SmartGlow Landing Page">
+                    </div>
+                    <div class="project-info">
+                        <h3>SmartGlow Landing Page</h3>
+                        <p>A sleek product landing page for SmartGlow, showcasing responsive design and clean layout</p>
+                        <div class="project-buttons">
+                            <a href="https://smart-glow.netlify.app/" target="_blank" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="images/Reeree.png" alt="Mini E-Commerce Website with WhatsApp Integration">
+                    </div>
+                    <div class="project-info">
+                        <h3>Mini E-Commerce Website with WhatsApp Integration</h3>
+                        <p>Responsive e-commerce site with shopping cart, payment modal, and WhatsApp integration for order confirmations.</p>
+                        <div class="project-buttons">
+                            <a href="https://reeree-ng.netlify.app/" target="blank" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="images/beautynails.png" alt="Beauty Nails & Hair Online Booking System">
+                    </div>
+                    <div class="project-info">
+                        <h3>Beauty Nails & Hair Online Booking System </h3>
+                        <p>Online booking app for beauty services with WhatsApp integration, multi-service selection, and admin dashboard.</p>
+                        <div class="project-buttons">
+                            <a href="https://beauty-nails-and-hair.netlify.app/" target="blank" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="images/tastebite.png" alt="TastyBite – Online Food Ordering Website">
+                    </div>
+                    <div class="project-info">
+                        <h3>TastyBite – Online Food Ordering Website</h3>
+                        <p>Responsive food ordering website with WhatsApp checkout, dynamic menu, and real-time cart updates.</p>
+                        <div class="project-buttons">
+                            <a href="https://tastybite-online.netlify.app/" target="_blank" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>I'm always open to discussing new opportunities and interesting projects. Feel free to reach out!</p>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" id="submit-btn" class="btn">Send Message</button>
+                <div id="form-message" style="display: none; margin-top: 1rem; padding: 0.5rem; border-radius: 5px;"></div>
+            </form>
+        </div>
+    </section>
+
+    <div id="back-to-top-text" style="display: none; text-align: center; padding: 1rem; background-color: #1a1a1a; color: #38bdf8; cursor: pointer; font-weight: bold;">↑ Back to Top</div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h3>Connect with Me</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/huthkid.dev?igsh=MTA0aDBlaG1kd2wzZA%3D%3D&utm_source=qr" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></li>
+                    <li><a href="https://wa.me/2348144170968" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.742.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/></svg></a></li>
+                    <li><a href="https://www.linkedin.com/in/odusanya-uthman-43aab0363/" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
+                    <li><a href="mailto:odusanyauthman2019@gmail.com" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; <span id="year"></span> Odusanya Uthman. All rights reserved.</p>
+    </footer>
+
+
+
+
+
+    <div id="image-modal">
+        <span id="close-modal">&times;</span>
+        <img id="modal-image" alt="Project Image">
+    </div>
+
+    <div id="snow"></div>
+   <script src="snow.js"></script>
+   
+    <script src="script.js" defer></script>
+</body>
+</html>
+</body>
+</html>
+</body>
+</html>
+</body>
+</html>
