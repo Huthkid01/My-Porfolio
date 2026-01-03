@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odusanya Uthman | Portfolio</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👤</text></svg>">
+    <link rel="icon" href="images/myimage.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="images/myimage.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="images/myimage.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#38bdf8">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
@@ -29,7 +33,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#skills">Skills & Technologies</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -80,20 +84,89 @@
 
     <section id="skills" class="skills">
         <div class="container">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">React</div>
-                <div class="skill hidden-skill">Figma</div>
-                <div class="skill hidden-skill">Git</div>
-                <div class="skill hidden-skill">GitHub</div>
-                <div class="skill hidden-skill">Supabase</div>
-                <div class="skill hidden-skill">API Integration</div>
-            </div>
-            <div class="view-more-container">
-                <span class="view-more-arrow" id="skills-toggle">▼ View More</span>
+            <h2>Skills & Technologies</h2>
+            <div class="skills-container">
+                <div class="skills-scroll">
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="40" height="40">
+                        </div>
+                        <div class="skill-name">HTML</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="40" height="40">
+                        </div>
+                        <div class="skill-name">CSS</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40">
+                        </div>
+                        <div class="skill-name">JavaScript</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40">
+                        </div>
+                        <div class="skill-name">React</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="40" height="40">
+                        </div>
+                        <div class="skill-name">Figma</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="40" height="40">
+                        </div>
+                        <div class="skill-name">Git</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="40" height="40" onerror="this.src='https://img.icons8.com/ios/50/ffffff/github.png'" style="filter: invert(1);">
+                        </div>
+                        <div class="skill-name">GitHub</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40">
+                        </div>
+                        <div class="skill-name">Supabase</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://img.icons8.com/ios-filled/50/38bdf8/api-settings.png" alt="API Integration" width="40" height="40">
+                        </div>
+                        <div class="skill-name">API Integration</div>
+                    </div>
+                    <!-- Duplicate first few for seamless loop -->
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="40" height="40">
+                        </div>
+                        <div class="skill-name">HTML</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="40" height="40">
+                        </div>
+                        <div class="skill-name">CSS</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40">
+                        </div>
+                        <div class="skill-name">JavaScript</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40">
+                        </div>
+                        <div class="skill-name">React</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -102,13 +175,19 @@
         <div class="container">
             <h2>My Projects</h2>
             <div class="projects-grid">
-                    <div class="project-card" data-aos="zoom-in">
+                <div class="project-card" data-aos="zoom-in">
                     <div class="project-image">
                         <img src="images/luxegloss.png" alt="Luxe Gloss E-Commerce landing page" loading="lazy">
                     </div>
-                    <div class="project-info">
+                        <div class="project-info">
                         <h3>Luxe Gloss E-Commerce landing page </h3>
                         <p>A modern lip gloss landing page where customers select quantities, make payments online, and are redirected to WhatsApp to confirm their orders with the owner.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Supabase</span>
+                        </div>
                         <div class="project-buttons">
                             <a href="https://luxe-gloss.netlify.app/" target="_blank" class="btn">View Project</a>
                         </div>
@@ -122,6 +201,11 @@
                     <div class="project-info">
                         <h3>Trendware – Multi‑Currency Fashion Store.</h3>
                         <p>Modern fashion store with multi-currency support (NGN, USD, GBP). Features shopping cart, payment integration, and admin dashboard.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Supabase</span>
+                            <span>API Integration</span>
+                        </div>
                         <div class="project-buttons">
                             <a href="https://trendware.netlify.app/" target="_blank" class="btn">View Project</a>
                         </div>
@@ -135,12 +219,23 @@
                     <div class="project-info">
                         <h3>LuxeStay Apartments </h3>
                         <p>A luxury apartment booking website built with HTML, CSS, and JavaScript, featuring image galleries, booking forms, and WhatsApp payment confirmation.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
                         <div class="project-buttons">
                             <a href="https://luxestayapartment.netlify.app/" target="_blank" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="load-more-container">
+                <button id="load-more-btn" class="btn load-more-btn">Load More</button>
+            </div>
+
+            <div class="projects-grid hidden-projects" id="hidden-projects">
                 <div class="project-card" data-aos="zoom-in">
                     <div class="project-image">
                         <img src="images/Smartglow.png" alt="SmartGlow Landing Page">
@@ -148,6 +243,11 @@
                     <div class="project-info">
                         <h3>SmartGlow Landing Page</h3>
                         <p>A sleek product landing page for SmartGlow, showcasing responsive design and clean layout</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
                         <div class="project-buttons">
                             <a href="https://smart-glow.netlify.app/" target="_blank" class="btn">View Project</a>
                         </div>
@@ -161,6 +261,11 @@
                     <div class="project-info">
                         <h3>Mini E-Commerce Website with WhatsApp Integration</h3>
                         <p>Responsive e-commerce site with shopping cart, payment modal, and WhatsApp integration for order confirmations.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
                         <div class="project-buttons">
                             <a href="https://reeree-ng.netlify.app/" target="blank" class="btn">View Project</a>
                         </div>
@@ -174,6 +279,12 @@
                     <div class="project-info">
                         <h3>Beauty Nails & Hair Online Booking System </h3>
                         <p>Online booking app for beauty services with WhatsApp integration, multi-service selection, and admin dashboard.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Supabase</span>
+                        </div>
                         <div class="project-buttons">
                             <a href="https://beauty-nails-and-hair.netlify.app/" target="blank" class="btn">View Project</a>
                         </div>
@@ -187,6 +298,11 @@
                     <div class="project-info">
                         <h3>TastyBite – Online Food Ordering Website</h3>
                         <p>Responsive food ordering website with WhatsApp checkout, dynamic menu, and real-time cart updates.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
                         <div class="project-buttons">
                             <a href="https://tastybite-online.netlify.app/" target="_blank" class="btn">View Project</a>
                         </div>
@@ -220,7 +336,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#skills">Skills & Technologies</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>

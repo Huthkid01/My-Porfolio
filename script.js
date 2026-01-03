@@ -105,6 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Load More Projects
+document.addEventListener('DOMContentLoaded', () => {
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const hiddenProjects = document.getElementById('hidden-projects');
+    const loadMoreContainer = document.querySelector('.load-more-container');
+
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            hiddenProjects.style.display = 'grid';
+            loadMoreContainer.style.display = 'none';
+        });
+    }
+});
+
 // Scroll to top on refresh
 window.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
@@ -196,14 +210,12 @@ if (contactForm) {
             formMessage.style.display = 'none';
 
             // Send email using EmailJS
-            console.log('Sending email...');
             emailjs.send('service_sq8q7zl', 'template_6dhntle', {
                 name: name,
                 email: email,
                 message: message,
                 date_time: new Date().toLocaleString()
             }).then(function(response) {
-                console.log('Email sent successfully!', response);
                 alert('Your message has been sent successfully!');
                 formMessage.style.display = 'block';
                 formMessage.style.backgroundColor = '#d4edda';
