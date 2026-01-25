@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odusanya Uthman | Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="images/myimage.png" type="image/png" sizes="32x32">
     <link rel="icon" href="images/myimage.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="images/myimage.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#38bdf8">
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Professional portfolio of Odusanya Uthman, Frontend Web Developer specializing in React, TypeScript, and modern web technologies">
+    <meta name="keywords" content="portfolio, frontend developer, web developer, React, TypeScript, JavaScript, HTML, CSS">
+    <meta name="author" content="Odusanya Uthman">
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" as="style" crossorigin>
+    <!-- Load CSS first -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Load fonts with display=swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Defer non-critical JavaScript -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <!-- Add async to prevent render blocking -->
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="loader">
@@ -177,6 +195,32 @@
             <div class="projects-grid">
                 <div class="project-card" data-aos="zoom-in">
                     <div class="project-image">
+                        <img src="images/Reeree.png" alt="REEREE.NG Storefront" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>REEREE.NG — Storefront & Email Service</h3>
+                        <p>Created a mobile-responsive e-commerce site for modest fashion with collections, product detail pages, a persistent cart, and streamlined Flutterwave checkout. Includes a cookie consent banner, SEO-friendly meta tags, smooth micro-interactions, and fast route-level code splitting. Built a secure serverless API that sends order notifications to the store owner and confirmation emails to customers using environment-secured credentials, templated HTML emails, and validation for reliability.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Vite</span>
+                            <span>Tailwind CSS</span>
+                            <span>React Router</span>
+                            <span>Zustand</span>
+                            <span>Flutterwave</span>
+                            <span>Vercel</span>
+                            <span>Node.js</span>
+                            <span>Nodemailer</span>
+                            <span>Express</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://reeree-ng.vercel.app/" target="_blank" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
                         <img src="images/logistics.png" alt="Platinum Logistics Recruitment Landing Page" loading="lazy">
                     </div>
                     <div class="project-info">
@@ -288,13 +332,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="load-more-container">
-                <button id="load-more-btn" class="btn load-more-btn">Load More</button>
-            </div>
-
-            <div class="projects-grid hidden-projects" id="hidden-projects">
                 <div class="project-card" data-aos="zoom-in">
                     <div class="project-image">
                         <img src="images/Smartglow.png" alt="SmartGlow Landing Page">
@@ -309,24 +347,6 @@
                         </div>
                         <div class="project-buttons">
                             <a href="https://smart-glow.netlify.app/" target="_blank" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/Reeree.png" alt="Mini E-Commerce Website with WhatsApp Integration">
-                    </div>
-                    <div class="project-info">
-                        <h3>Mini E-Commerce Website with WhatsApp Integration</h3>
-                        <p>Responsive e-commerce site with shopping cart, payment modal, and WhatsApp integration for order confirmations.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://reeree-ng.netlify.app/" target="blank" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -367,6 +387,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="load-more-container">
+                <button id="load-more-btn" class="btn load-more-btn">Load More</button>
+            </div>
             </div>
         </div>
     </section>

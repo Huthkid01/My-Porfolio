@@ -25,15 +25,17 @@ document.querySelectorAll('.view-more-arrow').forEach(arrow => {
     }
 });
 
-// Loading screen
-window.addEventListener('load', () => {
+// Optimized Loading screen - faster and more efficient
+document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
+
+    // Hide loader immediately when DOM is ready (faster than window.load)
+    loader.classList.add('hide');
+
+    // Remove from DOM after transition for better performance
     setTimeout(() => {
-        loader.classList.add('hide');
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 500); // Wait for transition to complete
-    }, 300); // Show loader for 0.3 seconds
+        loader.style.display = 'none';
+    }, 300); // Match CSS transition duration
 });
 
 // Customer Support Chat Widget
@@ -105,18 +107,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Load More Projects
+// Load More Projects - Mobile Only
 document.addEventListener('DOMContentLoaded', () => {
     const loadMoreBtn = document.getElementById('load-more-btn');
-    const hiddenProjects = document.getElementById('hidden-projects');
     const loadMoreContainer = document.querySelector('.load-more-container');
+    const projectCards = document.querySelectorAll('.projects-grid .project-card');
 
+    // Function to check if we're on mobile view
+    function isMobileView() {
+        return window.innerWidth <= 768; // Typical mobile breakpoint
+    }
+
+    // Function to handle mobile project display
+    function handleMobileProjects() {
+        if (isMobileView()) {
+            // On mobile: show only first 4 projects initially, hide the rest
+            const mobileVisibleCount = 4;
+
+            // Hide all projects first
+            projectCards.forEach((card, index) => {
+                if (index < mobileVisibleCount) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show view more button
+            loadMoreContainer.style.display = 'block';
+            loadMoreBtn.textContent = 'View More';
+        } else {
+            // On desktop: show ALL projects immediately
+            projectCards.forEach(card => {
+                card.style.display = 'block';
+            });
+
+            // Hide load more button on desktop
+            loadMoreContainer.style.display = 'none';
+        }
+    }
+
+    // View More/Less button click handler
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', () => {
-            hiddenProjects.style.display = 'grid';
-            loadMoreContainer.style.display = 'none';
+            const isShowingAll = projectCards[4].style.display === 'block';
+
+            if (isShowingAll) {
+                // View Less: Show only first 4 projects
+                projectCards.forEach((card, index) => {
+                    if (index < 4) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                loadMoreBtn.textContent = 'View More';
+            } else {
+                // View More: Show all projects
+                projectCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+                loadMoreBtn.textContent = 'View Less';
+            }
         });
     }
+
+    // Initialize on page load
+    handleMobileProjects();
+
+    // Update on window resize
+    window.addEventListener('resize', handleMobileProjects);
 });
 
 // Scroll to top on refresh
