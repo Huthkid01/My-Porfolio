@@ -9,7 +9,7 @@ A modern, responsive portfolio website showcasing frontend development skills wi
 - **Interactive UI** - Smooth animations, hover effects, and transitions
 - **Collapsible Sections** - Experience and Skills sections with "View More" functionality
 - **Contact Form** - EmailJS integration for form submissions
-- **Project Showcase** - 7+ featured projects with live links and modal previews
+- **Project Showcase** - 11+ featured projects with live links and modal previews
 - **Keyboard Navigation** - Full accessibility support with skip links and focus management
 
 ### Special Features
@@ -40,7 +40,7 @@ A modern, responsive portfolio website showcasing frontend development skills wi
 ### Development Tools
 - **Visual Studio Code** - Code editor
 - **Git** - Version control
-- **Netlify** - Hosting and deployment
+- **Netlify/Vercel** - Hosting and deployment
 
 ## 📁 Project Structure
 
@@ -55,6 +55,68 @@ portfolio/
 │   └── [project images]
 └── README.md          # This file
 ```
+
+## 🎯 Featured Projects
+
+### 1. Ramadan Ibadah Tracker
+- **Description**: Mobile-first Ramadan companion for tracking Salah, Qur'an recitation, dhikr, fasting, and reflections
+- **Tech Stack**: React, JavaScript, Vite, CSS3, React Router, Context API, Supabase, AlQuran Cloud API, Prayer Times API
+- **Live Demo**: [ramadan-ibadah-tracker.vercel.app](https://ramadan-ibadah-tracker.vercel.app)
+
+### 2. USSD Directory Africa
+- **Description**: Responsive web app centralizing USSD codes for major African mobile networks and banks
+- **Tech Stack**: React, JavaScript, Vite, Tailwind CSS, React Router, Axios, Formspree
+- **Live Demo**: [ussd-directory.vercel.app](https://ussd-directory.vercel.app/)
+
+### 3. REEREE.NG Storefront
+- **Description**: Mobile-responsive e-commerce site for modest fashion with cart and Flutterwave checkout
+- **Tech Stack**: React, TypeScript, Vite, Tailwind CSS, React Router, Zustand, Flutterwave
+- **Live Demo**: [reeree-ng.vercel.app](https://reeree-ng.vercel.app/)
+
+### 4. Platinum Logistics Recruitment
+- **Description**: Recruitment landing page with application form and file uploads
+- **Tech Stack**: HTML5, CSS3, JavaScript, FormSubmit
+- **Live Demo**: [platinumlogisticapplicant.com](https://platinumlogisticapplicant.com/)
+
+### 5. TasteBeta
+- **Description**: Full-stack food ordering platform with cart, payments, and WhatsApp notifications
+- **Tech Stack**: HTML5, CSS3, JavaScript, Flutterwave API, WhatsApp API
+- **Live Demo**: [tastebeta.netlify.app](https://tastebeta.netlify.app/)
+
+### 6. Soothing Massage Studio
+- **Description**: Booking website with EmailJS integration for notifications
+- **Tech Stack**: HTML5, CSS3, Vanilla JavaScript, EmailJS
+- **Live Demo**: [soothingmassage.fun](https://soothingmassage.fun/)
+
+### 7. Luxe Gloss
+- **Description**: E-commerce landing page with WhatsApp checkout
+- **Tech Stack**: HTML, CSS, JavaScript, Supabase
+- **Live Demo**: [luxe-gloss.netlify.app](https://luxe-gloss.netlify.app/)
+
+### 8. Trendware
+- **Description**: Multi-currency fashion store (NGN, USD, GBP)
+- **Tech Stack**: React, Supabase, API Integration
+- **Live Demo**: [trendware.netlify.app](https://trendware.netlify.app/)
+
+### 9. LuxeStay Apartments
+- **Description**: Luxury apartment booking website with WhatsApp payment confirmation
+- **Tech Stack**: HTML, CSS, JavaScript
+- **Live Demo**: [luxestayapartment.netlify.app](https://luxestayapartment.netlify.app/)
+
+### 10. SmartGlow
+- **Description**: Product landing page with responsive design
+- **Tech Stack**: HTML, CSS, JavaScript
+- **Live Demo**: [smart-glow.netlify.app](https://smart-glow.netlify.app/)
+
+### 11. Beauty Nails & Hair
+- **Description**: Online booking system with WhatsApp integration
+- **Tech Stack**: HTML, CSS, JavaScript, Supabase
+- **Live Demo**: [beauty-nails-and-hair.netlify.app](https://beauty-nails-and-hair.netlify.app/)
+
+### 12. TastyBite
+- **Description**: Food ordering website with WhatsApp checkout
+- **Tech Stack**: HTML, CSS, JavaScript
+- **Live Demo**: [tastybite-online.netlify.app](https://tastybite-online.netlify.app/)
 
 ## 🚀 Installation & Setup
 
@@ -143,9 +205,13 @@ python -m http.server 8000
 2. Connect to Netlify
 3. Deploy automatically
 
+### Vercel
+1. Push to GitHub
+2. Connect to Vercel
+3. Deploy automatically
+
 ### Other Options
 - GitHub Pages
-- Vercel
 - Firebase Hosting
 
 ## 📞 Contact
@@ -165,7 +231,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - Font Awesome for icons
 - EmailJS for form service
 - Google Fonts for typography
-- Netlify for hosting
+- Netlify and Vercel for hosting
 
 ---
 
