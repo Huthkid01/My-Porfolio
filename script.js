@@ -38,6 +38,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300); // Match CSS transition duration
 });
 
+
+const updateHeaderHeight = () => {
+    const header = document.querySelector('header');
+    if (!header) return;
+    document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+};
+
+updateHeaderHeight();
+
+document.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(updateHeaderHeight);
+    requestAnimationFrame(() => requestAnimationFrame(updateHeaderHeight));
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => requestAnimationFrame(updateHeaderHeight));
+    }
+    window.addEventListener('resize', updateHeaderHeight);
+    window.addEventListener('load', updateHeaderHeight);
+});
+
+const setRoundFavicon = () => {
+    const faviconLinks = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]');
+    if (faviconLinks.length === 0) return;
+    const img = new Image();
+    img.src = 'images/myimage.png';
+    img.onload = () => {
+        const size = 64;
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        ctx.beginPath();
+        ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(img, 0, 0, size, size);
+        const dataUrl = canvas.toDataURL('image/png');
+        faviconLinks.forEach(link => {
+            link.href = dataUrl;
+            link.type = 'image/png';
+        });
+    };
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    setRoundFavicon();
+});
+
 // Customer Support Chat Widget
 document.addEventListener('DOMContentLoaded', () => {
     const chatToggle = document.getElementById('chat-toggle');
@@ -110,8 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // Load More Projects - Mobile Only
 document.addEventListener('DOMContentLoaded', () => {
     const loadMoreBtn = document.getElementById('load-more-btn');
-    const loadMoreContainer = document.querySelector('.load-more-container');
-    const projectCards = document.querySelectorAll('.projects-grid .project-card');
+    const projectsSection = document.getElementById('projects');
+    const loadMoreContainer = projectsSection ? projectsSection.querySelector('.load-more-container') : null;
+    const projectCards = projectsSection ? projectsSection.querySelectorAll('.projects-grid .project-card') : [];
+
+    if (!loadMoreBtn || !loadMoreContainer || projectCards.length === 0) {
+        return;
+    }
 
     // Function to check if we're on mobile view
     function isMobileView() {
@@ -124,16 +177,18 @@ document.addEventListener('DOMContentLoaded', () => {
             // On mobile: show only first 4 projects initially, hide the rest
             const mobileVisibleCount = 4;
 
-            // Hide all projects first
-            projectCards.forEach((card, index) => {
-                if (index < mobileVisibleCount) {
+            if (projectCards.length <= mobileVisibleCount) {
+                projectCards.forEach(card => {
                     card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                });
+                loadMoreContainer.style.display = 'none';
+                return;
+            }
+
+            projectCards.forEach((card, index) => {
+                card.style.display = index < mobileVisibleCount ? 'block' : 'none';
             });
 
-            // Show view more button
             loadMoreContainer.style.display = 'block';
             loadMoreBtn.textContent = 'View More';
         } else {
@@ -148,29 +203,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // View More/Less button click handler
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', () => {
-            const isShowingAll = projectCards[4].style.display === 'block';
+    loadMoreBtn.addEventListener('click', () => {
+        const isShowingAll = projectCards.length > 4 && projectCards[4].style.display === 'block';
 
-            if (isShowingAll) {
-                // View Less: Show only first 4 projects
-                projectCards.forEach((card, index) => {
-                    if (index < 4) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-                loadMoreBtn.textContent = 'View More';
-            } else {
-                // View More: Show all projects
-                projectCards.forEach(card => {
-                    card.style.display = 'block';
-                });
-                loadMoreBtn.textContent = 'View Less';
-            }
+        if (isShowingAll) {
+            projectCards.forEach((card, index) => {
+                card.style.display = index < 4 ? 'block' : 'none';
+            });
+            loadMoreBtn.textContent = 'View More';
+            return;
+        }
+
+        projectCards.forEach(card => {
+            card.style.display = 'block';
         });
-    }
+        loadMoreBtn.textContent = 'View Less';
+    });
 
     // Initialize on page load
     handleMobileProjects();
@@ -382,6 +430,56 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.style.display === 'flex') {
         modal.style.display = 'none';
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const resumeBtn = document.getElementById('resume-btn');
+    const resumeModal = document.getElementById('resume-modal');
+    const closeResumeModal = document.getElementById('close-resume-modal');
+    const resumeFrame = document.getElementById('resume-frame');
+
+    if (!resumeBtn || !resumeModal || !closeResumeModal || !resumeFrame) {
+        return;
+    }
+
+    let lastActiveElement = null;
+
+    const openResumeModal = () => {
+        lastActiveElement = document.activeElement;
+        resumeModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        if (!resumeFrame.getAttribute('src')) {
+            resumeFrame.setAttribute('src', 'images/resume.pdf');
+        }
+        closeResumeModal.focus();
+    };
+
+    const closeResume = () => {
+        resumeModal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+            lastActiveElement.focus();
+        }
+    };
+
+    resumeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openResumeModal();
+    });
+
+    closeResumeModal.addEventListener('click', closeResume);
+
+    resumeModal.addEventListener('click', (e) => {
+        if (e.target === resumeModal) {
+            closeResume();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && resumeModal.style.display === 'flex') {
+            closeResume();
+        }
+    });
 });
 
 // Scroll-triggered animations for sections, headings, and elements

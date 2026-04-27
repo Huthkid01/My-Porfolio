@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odusanya Uthman | Portfolio</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="images/myimage.png" type="image/png">
+    <link rel="shortcut icon" href="images/myimage.png" type="image/png">
     <link rel="icon" href="images/myimage.png" type="image/png" sizes="32x32">
     <link rel="icon" href="images/myimage.png" type="image/png" sizes="16x16">
-    <link rel="apple-touch-icon" href="images/myimage.png">
+    <link rel="apple-touch-icon" href="images/myimage.png" sizes="180x180">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#38bdf8">
     <!-- Performance optimizations -->
@@ -28,8 +30,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     <!-- Defer non-critical JavaScript -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
-    <!-- Add async to prevent render blocking -->
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="loader">
@@ -53,6 +53,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills & Technologies</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -62,9 +63,10 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Hi, I'm <span class="highlight">Odusanya Uthman</span></h1>
-            <h2>Frontend Web Developer</h2>
-            <p>Creating beautiful and functional web experiences</p>
-            <a href="images/resume.pdf" download class="btn btn-secondary">My Resume</a>
+            <h2>Frontend Engineer • React & TypeScript</h2>
+            <p class="hero-lead">I build fast, accessible web apps with clean UI, real-time features, and reliable integrations.</p>
+            <p class="hero-meta">Open to Frontend / Full‑Stack (React) roles • Remote</p>
+            <a href="images/resume.pdf" id="resume-btn" class="btn btn-secondary">My Resume</a>
             <a href="#projects" class="btn">View My Work</a>
             <a href="#contact" class="btn btn-secondary">Hire Me</a>
         </div>
@@ -76,14 +78,14 @@
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I am a passionate web developer specializing in frontend development. I excel in creating intuitive and visually appealing user interfaces using modern technologies. With several years of experience, I have built responsive websites and web applications that provide excellent user experiences. My goal is to craft engaging digital solutions that combine functionality with aesthetic design.</p>
+            <p>I’m a frontend web developer who builds production-ready web experiences—from responsive UI to auth, database-backed features, and third‑party integrations. I work with React, TypeScript, Tailwind, and Supabase to deliver accessible interfaces, real-time updates, and performance-focused builds that feel polished and easy to use.</p>
         </div>
     </section>
 
     <section id="experience" class="experience">
         <div class="container">
             <h2>My Experience</h2>
-            <p>As a freelance frontend developer with 3 years of experience, I work remotely to create modern, responsive web applications.</p>
+            <p>Freelance frontend web developer with 2+ years of experience building responsive web apps and marketing sites for clients, focused on performance, accessibility, and clean delivery.</p>
             <div class="view-more-container">
                 <span class="view-more-arrow" data-target="experience-content">▼ View More</span>
             </div>
@@ -92,8 +94,14 @@
                     <div class="timeline-item">
                         <h3>Freelance Frontend Developer</h3>
                         <p class="company">Remote Worker</p>
-                        <p class="period">2021 - Present</p>
-                        <p>Specializing in modern web technologies, creating responsive and interactive web applications for clients worldwide.</p>
+                        <p class="period">2024 - Present</p>
+                        <ul class="experience-points">
+                            <li>Shipped responsive websites and web apps with modern UI, smooth interactions, and strong mobile UX.</li>
+                            <li>Integrated production features like payments (Flutterwave), email (EmailJS), and WhatsApp notifications.</li>
+                            <li>Built data-driven apps with Supabase Auth, Postgres, RLS, realtime updates, and edge functions.</li>
+                            <li>Improved quality with real-time validation, accessible UI patterns (keyboard/ARIA), and performance tuning.</li>
+                            <li>Worked directly with clients to scope requirements, iterate quickly, and deploy to Netlify/Vercel.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -122,6 +130,18 @@
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40">
                         </div>
                         <div class="skill-name">JavaScript</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40">
+                        </div>
+                        <div class="skill-name">TypeScript</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40">
+                        </div>
+                        <div class="skill-name">Node.js</div>
                     </div>
                     <div class="skill">
                         <div class="skill-icon">
@@ -180,6 +200,18 @@
                     </div>
                     <div class="skill">
                         <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40">
+                        </div>
+                        <div class="skill-name">TypeScript</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40">
+                        </div>
+                        <div class="skill-name">Node.js</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40">
                         </div>
                         <div class="skill-name">React</div>
@@ -195,11 +227,36 @@
             <div class="projects-grid">
                 <div class="project-card" data-aos="zoom-in">
                     <div class="project-image">
+                        <img src="images/Smartcrew.png" alt="SmartCrew Scheduler" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>SmartCrew Scheduler — Workforce Scheduling & Time Tracking</h3>
+                        <p>A workforce scheduling and time-tracking web app that helps teams manage shifts faster. Admins can add employees, create and publish schedules, generate schedules with AI, and monitor attendance in real time. Employees can view upcoming shifts and clock in/out with a built-in time clock.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Vite</span>
+                            <span>Tailwind CSS</span>
+                            <span>Shadcn/UI</span>
+                            <span>Supabase (Auth + Postgres + RLS + Realtime)</span>
+                            <span>Supabase Edge Functions (Deno)</span>
+                            <span>Groq API (Llama)</span>
+                            <span>React Big Calendar</span>
+                            <span>Date-fns</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://smart-crew-scheduler.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
                         <img src="images/ramadan-tracker.png" alt="Ramadan Ibadah Tracker" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>Ramadan Ibadah Tracker — Worship Tracking Web App</h3>
-                        <p>Built a mobile‑first Ramadan companion that helps Muslims track Salah, Qur'an recitation, dhikr, fasting, and reflections in one focused dashboard. Features an overview of daily/30‑day progress, a detailed daily tracker, a hijri‑aware Ramadan calendar, and a Qur'an page that remembers your Surah and resumes audio with verse‑by‑verse highlighting across pages. Includes live prayer times and Qibla direction using geolocation, daily ayah and hadith inspiration, theme switching, and auth‑protected dashboards with email/Google login and password reset.</p>
+                        <p>A mobile-first Ramadan companion to track Salah, Qur'an recitation, dhikr, fasting, and reflections. Includes daily/30-day progress, a detailed daily tracker, a Hijri-aware Ramadan calendar, and a Qur'an page that remembers your Surah and resumes audio with verse-by-verse highlighting. Also features live prayer times and Qibla direction (geolocation), daily ayah/hadith inspiration, theme switching, and auth-protected dashboards (email/Google + password reset).</p>
                         <div class="project-tech">
                             <span>React</span>
                             <span>JavaScript (ES6+)</span>
@@ -215,7 +272,7 @@
                             <span>Vercel</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://ramadan-ibadah-tracker.vercel.app" target="_blank" class="btn">View Project</a>
+                            <a href="https://ramadan-ibadah-tracker.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -226,7 +283,7 @@
                     </div>
                     <div class="project-info">
                         <h3>USSD Directory Africa — USSD Codes Lookup Web App</h3>
-                        <p>Built a responsive web app that centralizes USSD codes for major African mobile networks and banks, so users can quickly find balance, data, mobile money, and banking codes by country, provider, or category. Includes instant search with live results, country and network detail pages with copy/dial actions, and a "Submit Code" popup that lets users suggest new or updated codes via Formspree. Optimized for fast loading, mobile users, and SEO with dynamic meta tags for each country and network page.</p>
+                        <p>A responsive web app that centralizes USSD codes for major African networks and banks, searchable by country, provider, or category. Includes instant search with live results, detail pages with copy/dial actions, and a “Submit Code” popup via Formspree. Optimized for fast loading, mobile, and SEO with dynamic meta tags.</p>
                         <div class="project-tech">
                             <span>React</span>
                             <span>JavaScript (ES6+)</span>
@@ -239,7 +296,7 @@
                             <span>Lucide React</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://ussd-directory.vercel.app/" target="_blank" class="btn">View Project</a>
+                            <a href="https://ussd-directory.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -250,7 +307,7 @@
                     </div>
                     <div class="project-info">
                         <h3>REEREE.NG — Storefront & Email Service</h3>
-                        <p>Created a mobile-responsive e-commerce site for modest fashion with collections, product detail pages, a persistent cart, and streamlined Flutterwave checkout. Includes a cookie consent banner, SEO-friendly meta tags, smooth micro-interactions, and fast route-level code splitting. Built a secure serverless API that sends order notifications to the store owner and confirmation emails to customers using environment-secured credentials, templated HTML emails, and validation for reliability.</p>
+                        <p>A mobile-responsive e-commerce storefront for modest fashion with collections, product pages, a persistent cart, and streamlined Flutterwave checkout. Includes cookie consent, SEO meta tags, smooth micro-interactions, and route-level code splitting. Also features a secure serverless API for order notifications and customer confirmation emails with validation and environment-secured credentials.</p>
                         <div class="project-tech">
                             <span>React</span>
                             <span>TypeScript</span>
@@ -265,7 +322,7 @@
                             <span>Express</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://reeree-ng.vercel.app/" target="_blank" class="btn">View Project</a>
+                            <a href="https://reeree-ng.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -284,7 +341,7 @@
                             <span>FormSubmit</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://platinumlogisticapplicant.com/" target="_blank" class="btn">View Project</a>
+                            <a href="https://platinumlogisticapplicant.com/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -295,7 +352,7 @@
                     </div>
                         <div class="project-info">
                         <h3>TasteBeta - Full-Stack Food Ordering Platform</h3>
-                        <p>TasteBeta is a full-stack food ordering web platform built from scratch for Nigerian and fast-food restaurants. It features an interactive menu, advanced cart system, secure Flutterwave payments, real-time WhatsApp order notifications, and an admin dashboard for order management.</p>
+                        <p>A full-stack food ordering platform built for Nigerian fast-food restaurants with an interactive menu, advanced cart, Flutterwave payments, real-time WhatsApp order notifications, and an admin dashboard for order management.</p>
                         <div class="project-tech">
                             <span>HTML5</span>
                             <span>CSS3</span>
@@ -305,7 +362,7 @@
                             <span>LocalStorage</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://tastebeta.netlify.app/" target="_blank" class="btn">View Project</a>
+                            <a href="https://tastebeta.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -316,7 +373,7 @@
                     </div>
                         <div class="project-info">
                         <h3>Soothing Massage Studio Website</h3>
-                        <p>A fully responsive massage therapy booking website built with HTML, CSS, and Vanilla JavaScript. Features include an interactive hero carousel, service showcase, transparent pricing, customer reviews, and a complete booking system with EmailJS integration for automated email notifications. The site provides a professional online presence with seamless user experience across all devices.</p>
+                        <p>A responsive massage therapy booking website with an interactive hero carousel, services showcase, transparent pricing, customer reviews, and a complete booking flow with EmailJS email notifications.</p>
                         <div class="project-tech">
                             <span>HTML5</span>
                             <span>CSS3</span>
@@ -324,7 +381,7 @@
                             <span>EmailJS</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://soothingmassage.fun/" target="_blank" class="btn">View Project</a>
+                            <a href="https://soothingmassage.fun/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -343,7 +400,7 @@
                             <span>Supabase</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://luxe-gloss.netlify.app/" target="_blank" class="btn">View Project</a>
+                            <a href="https://luxe-gloss.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -361,7 +418,7 @@
                             <span>API Integration</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://trendware.netlify.app/" target="_blank" class="btn">View Project</a>
+                            <a href="https://trendware.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -379,62 +436,7 @@
                             <span>JavaScript</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="https://luxestayapartment.netlify.app/" target="_blank" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/Smartglow.png" alt="SmartGlow Landing Page">
-                    </div>
-                    <div class="project-info">
-                        <h3>SmartGlow Landing Page</h3>
-                        <p>A sleek product landing page for SmartGlow, showcasing responsive design and clean layout</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://smart-glow.netlify.app/" target="_blank" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/beautynails.png" alt="Beauty Nails & Hair Online Booking System">
-                    </div>
-                    <div class="project-info">
-                        <h3>Beauty Nails & Hair Online Booking System </h3>
-                        <p>Online booking app for beauty services with WhatsApp integration, multi-service selection, and admin dashboard.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Supabase</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://beauty-nails-and-hair.netlify.app/" target="blank" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/tastebite.png" alt="TastyBite – Online Food Ordering Website">
-                    </div>
-                    <div class="project-info">
-                        <h3>TastyBite – Online Food Ordering Website</h3>
-                        <p>Responsive food ordering website with WhatsApp checkout, dynamic menu, and real-time cart updates.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://tastybite-online.netlify.app/" target="_blank" class="btn">View Project</a>
+                            <a href="https://luxestayapartment.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -443,6 +445,88 @@
             <div class="load-more-container">
                 <button id="load-more-btn" class="btn load-more-btn">Load More</button>
             </div>
+        </div>
+    </section>
+
+    <section id="case-studies" class="case-studies">
+        <div class="container">
+            <h2>Case Studies</h2>
+            <p class="section-lead">Short breakdowns of the problems I solved, how I built the solution, and what mattered most.</p>
+            <div class="projects-grid">
+                <div id="case-study-smartcrew" class="project-card case-study-card" data-aos="zoom-in">
+                    <div class="project-info">
+                        <h3>SmartCrew Scheduler</h3>
+                        <div class="case-study-block">
+                            <h4>Problem</h4>
+                            <p>Manual scheduling creates conflicts, wasted time, and poor visibility into attendance.</p>
+                        </div>
+                        <div class="case-study-block">
+                            <h4>Solution</h4>
+                            <p>Built a workforce scheduling + time tracking app with AI schedule generation, publishing, and real-time attendance monitoring.</p>
+                        </div>
+                        <div class="case-study-block">
+                            <h4>Key Highlights</h4>
+                            <ul class="case-study-points">
+                                <li>Admin tools for employees, schedules, publishing, and conflict-free AI generation.</li>
+                                <li>Employee dashboard for upcoming shifts and clock in/out time clock.</li>
+                                <li>Supabase Auth + Postgres + RLS + Realtime and edge functions for secure workflows.</li>
+                            </ul>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://smart-crew-scheduler.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="case-study-ramadan" class="project-card case-study-card" data-aos="zoom-in">
+                    <div class="project-info">
+                        <h3>Ramadan Ibadah Tracker</h3>
+                        <div class="case-study-block">
+                            <h4>Problem</h4>
+                            <p>Users needed a focused way to track worship routines and stay consistent across Ramadan.</p>
+                        </div>
+                        <div class="case-study-block">
+                            <h4>Solution</h4>
+                            <p>Designed a mobile-first tracker with progress views, a Hijri-aware calendar, and a Qur’an experience that resumes where you left off.</p>
+                        </div>
+                        <div class="case-study-block">
+                            <h4>Key Highlights</h4>
+                            <ul class="case-study-points">
+                                <li>Daily and 30-day progress, detailed daily tracker, and theme switching.</li>
+                                <li>Prayer times + Qibla direction via geolocation, plus daily ayah/hadith inspiration.</li>
+                                <li>Auth-protected dashboards with email/Google login and password reset.</li>
+                            </ul>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://ramadan-ibadah-tracker.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">View App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="case-study-ussd" class="project-card case-study-card" data-aos="zoom-in">
+                    <div class="project-info">
+                        <h3>USSD Directory Africa</h3>
+                        <div class="case-study-block">
+                            <h4>Problem</h4>
+                            <p>USSD codes are hard to find and often outdated, especially across countries and providers.</p>
+                        </div>
+                        <div class="case-study-block">
+                            <h4>Solution</h4>
+                            <p>Built a fast lookup app that centralizes USSD codes with instant search, detail pages, and user submissions.</p>
+                        </div>
+                        <div class="case-study-block">
+                            <h4>Key Highlights</h4>
+                            <ul class="case-study-points">
+                                <li>Search by country, provider, or category with live results and quick actions.</li>
+                                <li>Copy and dial actions on detail pages for mobile-first usability.</li>
+                                <li>SEO-focused build with dynamic meta tags and a “Submit Code” flow via Formspree.</li>
+                            </ul>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://ussd-directory.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View App</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -473,6 +557,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills & Technologies</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -496,6 +581,22 @@
     <div id="image-modal">
         <span id="close-modal">&times;</span>
         <img id="modal-image" alt="Project Image">
+    </div>
+
+    <div id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+        <div class="resume-modal-content" role="document">
+            <div class="resume-modal-header">
+                <h3 id="resume-modal-title">Resume</h3>
+                <button type="button" id="close-resume-modal" aria-label="Close resume">&times;</button>
+            </div>
+            <div class="resume-modal-body">
+                <iframe id="resume-frame" title="Resume PDF" src="images/resume.pdf"></iframe>
+            </div>
+            <div class="resume-modal-actions">
+                <a href="images/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn">Open in New Tab</a>
+                <a href="images/resume.pdf" download class="btn btn-secondary">Download</a>
+            </div>
+        </div>
     </div>
 
     <!-- Customer Support Chat Widget -->
