@@ -38,6 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300); // Match CSS transition duration
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const skillsScroll = document.querySelector('.skills-scroll');
+    if (!skillsScroll) return;
+    if (skillsScroll.dataset.duplicated === 'true') return;
+    const items = Array.from(skillsScroll.children);
+    if (items.length === 0) return;
+    items.forEach(item => {
+        skillsScroll.appendChild(item.cloneNode(true));
+    });
+    skillsScroll.dataset.duplicated = 'true';
+});
+
 
 const updateHeaderHeight = () => {
     const header = document.querySelector('header');

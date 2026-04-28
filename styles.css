@@ -396,8 +396,20 @@ section h2 {
 .skills-scroll {
     display: flex;
     gap: 1rem;
-    animation: scrollSkills 10s linear infinite;
+    animation: scrollSkills 18s linear infinite;
     will-change: transform;
+}
+
+.skills-container:hover .skills-scroll,
+.skills-container:focus-within .skills-scroll {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills-scroll {
+        animation: none;
+        transform: none;
+    }
 }
 
 .skill {
@@ -425,8 +437,8 @@ section h2 {
 }
 
 @keyframes scrollSkills {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* Projects */
@@ -1066,7 +1078,7 @@ footer p {
     }
 
     .skills-scroll {
-        animation-duration: 15s;
+        animation-duration: 22s;
         gap: 0.5rem;
     }
 
@@ -1481,7 +1493,7 @@ section h2 {
 .skills-scroll {
     display: flex;
     gap: 1rem;
-    animation: scrollSkills 10s linear infinite;
+    animation: scrollSkills 18s linear infinite;
 }
 
 .skill {
@@ -1508,8 +1520,8 @@ section h2 {
 }
 
 @keyframes scrollSkills {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 
@@ -2032,7 +2044,7 @@ footer p {
     }
 
     .skills-scroll {
-        animation-duration: 15s;
+        animation-duration: 22s;
         gap: 0.5rem;
     }
 
