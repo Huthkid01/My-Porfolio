@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resumeModal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         if (!resumeFrame.getAttribute('src')) {
-            resumeFrame.setAttribute('src', 'images/resume.pdf');
+            resumeFrame.setAttribute('src', 'images/Uthman_Odusanya_Resume.pdf');
         }
         closeResumeModal.focus();
     };

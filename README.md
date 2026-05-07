@@ -51,7 +51,7 @@ portfolio/
 ├── script.js           # Main JavaScript functionality
 ├── snow.js            # Seasonal effects script
 ├── images/            # Project images and assets
-│   ├── resume.pdf     # Downloadable resume
+│   ├── Uthman_Odusanya_Resume.pdf     # Downloadable resume
 │   └── [project images]
 └── README.md          # This file
 ```
@@ -136,7 +136,7 @@ portfolio/
    - Update credentials in `script.js`
 
 4. **Resume Upload**
-   - Place your resume PDF as `images/resume.pdf`
+   - Place your resume PDF as `images/Uthman_Odusanya_Resume.pdf`
    - Update download link if needed
 
 ## 🎨 Customization
