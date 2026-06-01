@@ -406,7 +406,7 @@ if (highlightElement) {
 }
 
 if (h2Element) {
-    const h2Text = 'Frontend Web Developer';
+    const h2Text = 'Full-Stack Web Developer';
     h2Element.textContent = '';
     let index2 = 0;
     const typeH2 = () => {
@@ -547,5 +547,13 @@ projectCards.forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(40px)';
     card.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+    observer.observe(card);
+});
+
+// Animate service cards
+document.querySelectorAll('.service-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(card);
 });
