@@ -14,28 +14,36 @@ document.querySelectorAll('.view-more-arrow').forEach(arrow => {
         // Regular collapsible
         arrow.addEventListener('click', () => {
             const target = document.getElementById(arrow.dataset.target);
+            const section = arrow.closest('section');
             if (target.style.display === 'none' || target.style.display === '') {
                 target.style.display = 'block';
                 arrow.textContent = '▲ View Less';
             } else {
                 target.style.display = 'none';
                 arrow.textContent = '▼ View More';
+                if (section) {
+                    requestAnimationFrame(() => {
+                        const headerHeight = parseFloat(
+                            getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+                        ) || 96;
+                        const top = section.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+                    });
+                }
             }
         });
     }
 });
 
-// Optimized Loading screen - faster and more efficient
+// Fast loader — hide as soon as DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
+    if (!loader) return;
 
-    // Hide loader immediately when DOM is ready (faster than window.load)
     loader.classList.add('hide');
-
-    // Remove from DOM after transition for better performance
     setTimeout(() => {
-        loader.style.display = 'none';
-    }, 300); // Match CSS transition duration
+        loader.remove();
+    }, 180);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -192,6 +200,16 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transform = 'translateY(0)';
     }
 
+    function scrollToSectionTop(section) {
+        requestAnimationFrame(() => {
+            const headerHeight = parseFloat(
+                getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+            ) || 96;
+            const top = section.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        });
+    }
+
     function applyProjectsVisibility() {
         if (!isMobileView()) {
             isProjectsExpanded = false;
@@ -225,8 +243,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadMoreBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        const wasExpanded = isProjectsExpanded;
         isProjectsExpanded = !isProjectsExpanded;
         applyProjectsVisibility();
+
+        // Collapsing shrinks the page but scroll position stays put — scroll back to projects
+        if (wasExpanded && !isProjectsExpanded) {
+            scrollToSectionTop(projectsSection);
+        }
     });
 
     applyProjectsVisibility();
@@ -313,52 +337,77 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Initialize EmailJS with your public key
-emailjs.init('LFEwK23lD-5JHLuM5');
-// Form submission handling with EmailJS
+// EmailJS — load only when the contact form is used (faster initial page load)
+const EMAILJS_SRC = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+const EMAILJS_PUBLIC_KEY = 'LFEwK23lD-5JHLuM5';
+let emailJsReady = null;
+
+function ensureEmailJS() {
+    if (emailJsReady) return emailJsReady;
+
+    emailJsReady = new Promise((resolve, reject) => {
+        if (window.emailjs) {
+            window.emailjs.init(EMAILJS_PUBLIC_KEY);
+            resolve(window.emailjs);
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = EMAILJS_SRC;
+        script.async = true;
+        script.onload = () => {
+            window.emailjs.init(EMAILJS_PUBLIC_KEY);
+            resolve(window.emailjs);
+        };
+        script.onerror = () => reject(new Error('EmailJS failed to load'));
+        document.head.appendChild(script);
+    });
+
+    return emailJsReady;
+}
+
 const contactForm = document.querySelector('form');
 const submitBtn = document.getElementById('submit-btn');
 const formMessage = document.getElementById('form-message');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        // Simple validation
         const name = this.querySelector('input[type="text"]').value.trim();
         const email = this.querySelector('input[type="email"]').value.trim();
         const message = this.querySelector('textarea').value.trim();
 
         if (name && email && message) {
-            // Disable button and show loading
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             formMessage.style.display = 'none';
 
-            // Send email using EmailJS
-            emailjs.send('service_sq8q7zl', 'template_6dhntle', {
-                name: name,
-                email: email,
-                message: message,
-                date_time: new Date().toLocaleString()
-            }).then(function(response) {
+            try {
+                const emailjs = await ensureEmailJS();
+                await emailjs.send('service_sq8q7zl', 'template_6dhntle', {
+                    name: name,
+                    email: email,
+                    message: message,
+                    date_time: new Date().toLocaleString()
+                });
+
                 alert('Your message has been sent successfully!');
                 formMessage.style.display = 'block';
                 formMessage.style.backgroundColor = '#d4edda';
                 formMessage.style.color = '#155724';
                 formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
                 contactForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            }, function(error) {
+            } catch (error) {
                 console.error('EmailJS error:', error);
                 alert('Failed to send message. Please check your connection and try again.');
                 formMessage.style.display = 'block';
                 formMessage.style.backgroundColor = '#f8d7da';
                 formMessage.style.color = '#721c24';
                 formMessage.textContent = 'Failed to send message. Please try again.';
+            } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
-            });
+            }
         } else {
             formMessage.style.display = 'block';
             formMessage.style.backgroundColor = '#fff3cd';
@@ -499,61 +548,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Scroll-triggered animations for sections, headings, and elements
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+// Scroll animations — deferred so hero and content show faster
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        if (section.id === 'home') {
+            section.style.opacity = '1';
+            section.style.transform = 'none';
+            return;
         }
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(24px)';
+        section.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+        observer.observe(section);
     });
-}, observerOptions);
 
-// Animate sections
-const sections = document.querySelectorAll('section');
-sections.forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(section);
-});
+    document.querySelectorAll('section:not(#home) h2, section:not(#home) h3').forEach(heading => {
+        heading.style.opacity = '0';
+        heading.style.transform = 'translateY(16px)';
+        heading.style.transition = 'opacity 0.45s ease-out, transform 0.45s ease-out';
+        observer.observe(heading);
+    });
 
-// Animate headings
-const headings = document.querySelectorAll('h2, h3');
-headings.forEach(heading => {
-    heading.style.opacity = '0';
-    heading.style.transform = 'translateY(20px)';
-    heading.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
-    observer.observe(heading);
-});
+    document.querySelectorAll('.skill').forEach(skill => {
+        skill.style.opacity = '0';
+        skill.style.transform = 'translateY(16px)';
+        skill.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+        observer.observe(skill);
+    });
 
-// Animate skill boxes
-const skillElements = document.querySelectorAll('.skill');
-skillElements.forEach(skill => {
-    skill.style.opacity = '0';
-    skill.style.transform = 'translateY(20px)';
-    skill.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
-    observer.observe(skill);
-});
+    document.querySelectorAll('.project-card, .service-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(24px)';
+        card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+        observer.observe(card);
+    });
+}
 
-// Animate project cards
-const projectCards = document.querySelectorAll('.project-card');
-projectCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(40px)';
-    card.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
-    observer.observe(card);
-});
-
-// Animate service cards
-document.querySelectorAll('.service-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(card);
-});
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(initScrollAnimations, { timeout: 1500 });
+} else {
+    setTimeout(initScrollAnimations, 50);
+}

@@ -22,13 +22,12 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" as="style" crossorigin>
+    <link rel="preload" href="images/myimage.png" as="image">
     <!-- Load CSS first -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Load fonts with display=swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- Defer non-critical JavaScript -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <!-- Fonts load async — display=swap avoids invisible text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
 </head>
 <body>
     <div id="loader">
@@ -61,6 +60,7 @@
 
     <main id="main-content">
     <section id="home" class="hero">
+        <div id="hero-bg-3d" aria-hidden="true"></div>
         <div class="hero-content">
             <h1>Hi, I'm <span class="highlight">Odusanya Uthman</span></h1>
             <h2>Full-Stack Engineer • React & TypeScript</h2>
@@ -71,7 +71,7 @@
             <a href="#contact" class="btn btn-secondary">Hire Me</a>
         </div>
         <div class="hero-image">
-            <img src="images/myimage.png" alt="Odusanya Uthman">
+            <img src="images/myimage.png" alt="Odusanya Uthman" width="350" height="350" fetchpriority="high" decoding="async">
         </div>
     </section>
 
@@ -682,6 +682,7 @@
 
     <div id="snow"></div>
     <script src="snow.js"></script>
+    <script src="background-3d.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>

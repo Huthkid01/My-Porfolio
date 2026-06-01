@@ -50,7 +50,7 @@ body {
 #loader.hide {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
 }
 
 /* Skip link - critical for accessibility */
@@ -165,14 +165,47 @@ nav {
 
 /* Hero section - critical for first impression */
 .hero {
+    position: relative;
+    overflow: hidden;
     height: auto;
     min-height: calc(100vh - var(--header-height, 96px) - env(safe-area-inset-top));
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    background-color: #0f0f23;
     padding-top: 0;
     padding-left: 2rem;
+}
+
+#hero-bg-3d {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#hero-bg-3d canvas {
+    display: block;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 15, 35, 0.55) 0%,
+        rgba(26, 26, 46, 0.72) 50%,
+        rgba(18, 18, 18, 0.85) 100%
+    );
+}
+
+.hero-content,
+.hero-image {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
@@ -1378,20 +1411,25 @@ nav {
     color: #00d4ff;
 }
 
-/* Hero section */
+/* Hero section (3D background — styles mirrored from primary block above) */
 .hero {
-    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    min-height: calc(100vh - var(--header-height, 96px) - env(safe-area-inset-top));
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
-    padding-top: 80px; /* Account for fixed header */
+    background-color: #0f0f23;
+    padding-top: 0;
     padding-left: 2rem;
 }
 
 .hero-content {
     text-align: center;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
