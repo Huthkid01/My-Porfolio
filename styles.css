@@ -2266,10 +2266,10 @@ footer p {
         padding: 1rem;
     }
 
-    .hero {
+    .hero-inner {
         flex-direction: column;
-        justify-content: center;
-        padding-top: 100px;
+        justify-content: flex-start;
+        padding: 0.5rem 1.25rem 2rem;
     }
 
     .hero-content {
@@ -2279,7 +2279,7 @@ footer p {
 
     .hero-content h1 {
         font-size: 2rem;
-        margin-top: 3rem;
+        margin-top: 0.5rem;
     }
 
 
