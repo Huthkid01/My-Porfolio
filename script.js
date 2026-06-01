@@ -565,8 +565,10 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
+    const staticSections = new Set(['home', 'services']);
+
     document.querySelectorAll('section').forEach(section => {
-        if (section.id === 'home') {
+        if (staticSections.has(section.id)) {
             section.style.opacity = '1';
             section.style.transform = 'none';
             return;
@@ -577,7 +579,7 @@ function initScrollAnimations() {
         observer.observe(section);
     });
 
-    document.querySelectorAll('section:not(#home) h2, section:not(#home) h3').forEach(heading => {
+    document.querySelectorAll('section:not(#home):not(#services) h2, section:not(#home):not(#services) h3').forEach(heading => {
         heading.style.opacity = '0';
         heading.style.transform = 'translateY(16px)';
         heading.style.transition = 'opacity 0.45s ease-out, transform 0.45s ease-out';
@@ -591,11 +593,17 @@ function initScrollAnimations() {
         observer.observe(skill);
     });
 
-    document.querySelectorAll('.project-card, .service-card').forEach(card => {
+    document.querySelectorAll('.project-card').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(24px)';
         card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
         observer.observe(card);
+    });
+
+    // Services cards: always visible (no nested opacity — fixes broken mobile layout)
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'none';
     });
 }
 
