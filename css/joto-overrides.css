@@ -192,13 +192,19 @@
 }
 
 /* Mobile hero — match joto.team (tabs in content flow below CTA) */
-.banner-three__slider-progress--mobile {
-    display: none;
+.banner-three .banner-three__slider-progress--mobile {
+    display: none !important;
+}
+
+@media only screen and (min-width: 992px) {
+    .banner-three__slider-progress-wrapper--desktop {
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 991.98px) {
     .banner-three__slider-progress-wrapper--desktop {
-        display: none;
+        display: none !important;
     }
 
     .banner-three .banner-three__slider,
@@ -235,8 +241,8 @@
         margin-top: 40px;
     }
 
-    .banner-three__slider-progress--mobile {
-        display: flex;
+    .banner-three .banner-three__slider-progress--mobile {
+        display: flex !important;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -245,7 +251,7 @@
         margin-top: 40px;
     }
 
-    .banner-three__slider-progress--mobile .single-item {
+    .banner-three .banner-three__slider-progress--mobile .single-item {
         min-width: 0 !important;
         width: 100%;
         max-width: none;
@@ -254,11 +260,11 @@
         margin-bottom: 20px;
     }
 
-    .banner-three__slider-progress--mobile .single-item:last-child {
+    .banner-three .banner-three__slider-progress--mobile .single-item:last-child {
         margin-bottom: 0;
     }
 
-    .banner-three__slider-progress--mobile .single-item p {
+    .banner-three .banner-three__slider-progress--mobile .single-item p {
         text-transform: uppercase;
         font-size: 13px;
         font-weight: 600;
@@ -267,7 +273,7 @@
         color: #888;
     }
 
-    .banner-three__slider-progress--mobile .single-item span {
+    .banner-three .banner-three__slider-progress--mobile .single-item span {
         display: block;
         font-size: 14px;
         font-weight: 600;
@@ -275,19 +281,19 @@
         line-height: 1;
     }
 
-    .banner-three__slider-progress--mobile .single-item-active {
+    .banner-three .banner-three__slider-progress--mobile .single-item-active {
         opacity: 1 !important;
     }
 
-    .banner-three__slider-progress--mobile .single-item-active p {
+    .banner-three .banner-three__slider-progress--mobile .single-item-active p {
         color: #fff;
     }
 
-    .banner-three__slider-progress--mobile .single-item-active span {
+    .banner-three .banner-three__slider-progress--mobile .single-item-active span {
         color: var(--primary-color);
     }
 
-    .banner-three__slider-progress--mobile .slider-progress {
+    .banner-three .banner-three__slider-progress--mobile .slider-progress {
         width: 100%;
         height: 4px;
         background: #a5a5a5;
@@ -344,20 +350,20 @@
         margin-top: 32px;
     }
 
-    .banner-three__slider-progress--mobile {
+    .banner-three .banner-three__slider-progress--mobile {
         margin-top: 32px;
     }
 
-    .banner-three__slider-progress--mobile .single-item {
+    .banner-three .banner-three__slider-progress--mobile .single-item {
         margin-bottom: 16px;
     }
 
-    .banner-three__slider-progress--mobile .single-item p {
+    .banner-three .banner-three__slider-progress--mobile .single-item p {
         font-size: 12px;
         margin: 6px 0 8px;
     }
 
-    .banner-three__slider-progress--mobile .single-item span {
+    .banner-three .banner-three__slider-progress--mobile .single-item span {
         font-size: 13px;
     }
 
