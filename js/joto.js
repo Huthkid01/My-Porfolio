@@ -72,6 +72,7 @@
             loop: true,
             speed: 1000,
             centeredSlides: true,
+            autoHeight: true,
             autoplay: {
                 delay: HERO_DELAY,
                 disableOnInteraction: false,
@@ -81,10 +82,14 @@
                 init(sw) {
                     setActiveTab(sw.realIndex);
                     loadHeroSlideBg(sw.slides[sw.activeIndex]);
+                    sw.updateAutoHeight();
                     const schedule = window.requestIdleCallback || ((cb) => setTimeout(cb, 1200));
                     schedule(() => preloadRemainingHeroSlides(sw));
                 },
-                slideChange(sw) { setActiveTab(sw.realIndex); },
+                slideChange(sw) {
+                    setActiveTab(sw.realIndex);
+                    sw.updateAutoHeight();
+                },
                 slideChangeTransitionStart(sw) { loadHeroSlideBg(sw.slides[sw.activeIndex]); },
             },
         });
