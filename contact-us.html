@@ -190,11 +190,11 @@
                                         <div class="contact-main__form fade-top">
                                             <h3>Leave A Message</h3>
                                             <p id="form-success" class="form-success" role="status" hidden>Thank you! Your message was sent successfully.</p>
-                                            <form action="https://formsubmit.co/odusanyauthman2019@gmail.com" method="POST" class="section__content-cta" onsubmit="var s=this.elements.subject;if(s&amp;&amp;s.value)this.elements._subject.value=s.value;return true;">
+                                            <p id="form-error" class="form-message" role="alert" hidden>Something went wrong. Please try again or email odusanyauthman2019@gmail.com directly.</p>
+                                            <form id="contact-form" action="https://formsubmit.co/ajax/odusanyauthman2019@gmail.com" method="POST" class="section__content-cta">
                                                 <input type="hidden" name="_captcha" value="false">
                                                 <input type="hidden" name="_template" value="table">
-                                                <input type="hidden" name="_next" id="formsubmit-next" value="">
-                                                <input type="hidden" name="_subject" value="">
+                                                <input type="hidden" name="_subject" id="contact-form-subject" value="">
                                                 <div class="group-wrapper">
                                                     <div class="group-input">
                                                         <input type="text" name="name" id="contactName" placeholder="Full Name" required aria-label="Full name">
@@ -271,14 +271,49 @@
     <script src="js/joto.js" defer></script>
     <script>
         (function () {
-            var next = document.getElementById('formsubmit-next');
-            if (next) {
-                next.value = window.location.origin + window.location.pathname.replace(/\/$/, '') + '?sent=true';
-            }
-            if (new URLSearchParams(window.location.search).get('sent') === 'true') {
-                var el = document.getElementById('form-success');
-                if (el) el.hidden = false;
-            }
+            var form = document.getElementById('contact-form');
+            var successEl = document.getElementById('form-success');
+            var errorEl = document.getElementById('form-error');
+            var subjectField = document.getElementById('contact-form-subject');
+            var submitBtn = form && form.querySelector('button[type="submit"]');
+
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (successEl) successEl.hidden = true;
+                if (errorEl) errorEl.hidden = true;
+
+                var subjectSelect = form.elements.subject;
+                if (subjectField && subjectSelect && subjectSelect.value) {
+                    subjectField.value = subjectSelect.value;
+                }
+
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending…';
+                }
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { Accept: 'application/json' },
+                })
+                    .then(function (res) {
+                        if (!res.ok) throw new Error('Send failed');
+                        form.reset();
+                        if (successEl) successEl.hidden = false;
+                    })
+                    .catch(function () {
+                        if (errorEl) errorEl.hidden = false;
+                    })
+                    .finally(function () {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                        }
+                    });
+            });
         })();
     </script>
 </body>
