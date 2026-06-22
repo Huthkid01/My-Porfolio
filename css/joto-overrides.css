@@ -214,8 +214,8 @@
     }
 
     .banner-three .banner-three__slider-single {
-        padding: 180px 0 40px;
-        min-height: 0;
+        padding: 180px 0 64px;
+        min-height: 82svh;
     }
 
     .banner-three .banner-three__slider-single .row {
@@ -308,7 +308,8 @@
 
 @media only screen and (max-width: 767.98px) {
     .banner-three .banner-three__slider-single {
-        padding: 180px 0 32px;
+        padding: 180px 0 56px;
+        min-height: 85svh;
     }
 
     .banner-three .banner-three__content h1.light-title {
@@ -333,7 +334,8 @@
     }
 
     .banner-three .banner-three__slider-single {
-        padding: 160px 0 24px;
+        padding: 160px 0 48px;
+        min-height: 88svh;
     }
 
     .banner-three .banner-three__slider-single .container {
