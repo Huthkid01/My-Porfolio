@@ -1,5 +1,8 @@
 # Redirect all HTTP to HTTPS
-http://*  https://uthmanportfolio.me 301!
+http://*  https://codedbyuthman.online 301!
 
 # Redirect www to non-www
-https://www.uthmanportfolio.me/*  https://uthmanportfolio.me/:splat 301!
+https://www.codedbyuthman.online/*  https://codedbyuthman.online/:splat 301!
+
+# Clean contact page URL
+/contact-us  /contact-us.html  200

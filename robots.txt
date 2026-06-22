@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codedbyuthman.online/sitemap.xml

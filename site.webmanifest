@@ -1,15 +1,16 @@
 {
-    "name": "Odusanya Uthman - Portfolio",
-    "short_name": "Portfolio",
-    "description": "Professional portfolio of Odusanya Uthman, Full-Stack Web Developer",
+    "name": "Odusanya Uthman — Full-Stack Web Developer",
+    "short_name": "Odusanya Uthman",
+    "description": "Portfolio of Odusanya Uthman — full-stack and frontend web developer in Lagos, Nigeria. React, TypeScript, PostgreSQL.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#121212",
-    "theme_color": "#38bdf8",
+    "background_color": "#000000",
+    "theme_color": "#ff7425",
+    "lang": "en-NG",
     "icons": [
         {
             "src": "images/myimage.png",
-            "sizes": "any",
+            "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
         }

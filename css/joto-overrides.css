@@ -1,0 +1,237 @@
+/* Portfolio-specific overrides on top of Joto original CSS */
+
+.site-logo {
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+.site-logo:hover {
+    color: var(--primary-color);
+}
+
+.contact-form {
+    margin-top: 40px;
+    padding: 40px;
+    background: var(--septenary-color);
+    border: 1px solid #414141;
+    border-radius: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: #181818;
+    border: 1px solid #414141;
+    border-radius: 8px;
+    color: #fff;
+    font-family: var(--theme-font);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-message {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.banner-three__slider-progress .single-item {
+    cursor: pointer;
+}
+
+.portfolio__single > img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.agency__thumb img {
+    border-radius: 8px;
+}
+
+.service-f .single-item.p-single.p-sm img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.service-f .service-f-single-active .single-item .sub-title {
+    opacity: 1;
+}
+
+/* Ensure service rows are visible even before GSAP runs */
+.service-f .service-f-single.fade-top {
+    opacity: 1;
+}
+
+@media (max-width: 991px) {
+    .mouseCursor {
+        display: none !important;
+    }
+}
+
+/* Contact page */
+.cmn-banner.bg-img {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.cmn-banner.bg-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9));
+    z-index: 0;
+}
+
+.cmn-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-m .thumb i {
+    font-size: 42px;
+    color: var(--primary-color);
+}
+
+.contact-m .contact-m__single.fade-top {
+    opacity: 1;
+}
+
+.contact-m .form-message {
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.form-success {
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background: rgba(74, 222, 128, 0.12);
+    border: 1px solid #4ade80;
+    color: #4ade80;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1199px) {
+    .banner-three__slider-progress {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .banner-three__slider-progress::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .primary-navbar .navbar__menu .navbar__item a {
+        font-size: 13px;
+        word-break: break-all;
+    }
+
+    .tertiary--navbar .open-offcanvas-nav {
+        padding: 18px 24px;
+    }
+
+    .banner-three .banner-three__slider-single {
+        padding: 180px 0 280px;
+    }
+
+    .banner-three .banner-three__content h1 {
+        font-size: clamp(28px, 7vw, 48px);
+        line-height: 1.15;
+    }
+
+    .banner-three__slider-progress .single-item {
+        min-width: 200px;
+    }
+
+    .service-f .service-f-single {
+        padding: 32px 60px 32px 0;
+    }
+
+    .agency__content .cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .agency__content .cta-group .btn {
+        text-align: center;
+    }
+
+    .cta-two__content h2 {
+        font-size: clamp(28px, 6vw, 42px);
+    }
+
+    .contact-m .contact-m__single {
+        padding: 32px 24px;
+    }
+
+    .contact-m .contact-main__form {
+        padding: 40px 24px;
+        margin-top: 24px;
+    }
+
+    .contact-m .contact-main__form .group-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-m .contact-main__form .group-wrapper .group-input {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .contact-m .map-wrapper iframe {
+        min-height: 280px;
+    }
+
+    .cmn-banner {
+        padding: 160px 0 80px;
+    }
+
+    .cmn-banner .primary-text {
+        margin-top: 24px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 575px) {
+    .navbar__logo .site-logo {
+        font-size: 14px;
+    }
+
+    .banner-three .banner-three__slider-single {
+        padding: 150px 0 240px;
+    }
+
+    .section__header .title {
+        font-size: clamp(32px, 9vw, 48px);
+    }
+
+    .portfolio-three__slider-w .slide-group {
+        margin-top: 24px;
+    }
+
+    .footer__copyright-text p {
+        font-size: 14px;
+    }
+}
