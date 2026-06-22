@@ -57,12 +57,12 @@
     }
 
     function setActiveTab(index) {
-        const items = document.querySelectorAll('.banner-three__slider-progress .single-item');
-        items.forEach((el) => el.classList.remove('single-item-active'));
-        const active = items[index];
-        if (!active) return;
-        void active.offsetWidth;
-        active.classList.add('single-item-active');
+        document.querySelectorAll('.banner-three__slider-progress').forEach((group) => {
+            group.querySelectorAll('.single-item').forEach((el, i) => {
+                el.classList.toggle('single-item-active', i === index);
+                if (i === index) void el.offsetWidth;
+            });
+        });
     }
 
     if (typeof Swiper !== 'undefined') {
@@ -89,8 +89,11 @@
             },
         });
 
-        document.querySelectorAll('.banner-three__slider-progress .single-item').forEach((tab, idx) => {
-            tab.addEventListener('click', () => heroSwiper.slideToLoop(idx));
+        document.querySelector('.banner-three')?.addEventListener('click', (e) => {
+            const tab = e.target.closest('.banner-three__slider-progress .single-item');
+            if (!tab || !heroSwiper) return;
+            const idx = Number(tab.dataset.slide);
+            if (!Number.isNaN(idx)) heroSwiper.slideToLoop(idx);
         });
     }
 
