@@ -191,113 +191,69 @@
     }
 }
 
-/* Mobile hero — single progress bar (no duplicates) */
+/* Mobile hero — match joto.team (stacked progress tabs, no overlap) */
 @media only screen and (max-width: 991.98px) {
-    .banner-three {
-        position: relative;
-        min-height: 100svh;
-    }
-
-    .banner-three .banner-three__slider,
-    .banner-three .banner-three__slider .swiper-wrapper,
-    .banner-three .banner-three__slider .swiper-slide {
-        height: auto !important;
-    }
-
     .banner-three .banner-three__slider-single {
-        padding: 180px 0 220px;
-        min-height: 100svh;
-        box-sizing: border-box;
+        padding: 180px 0 560px;
     }
 
-    .banner-three .banner-three__slider-single .container {
+    .banner-three .banner-three__content,
+    .banner-three .banner-three__slider-progress {
         padding-left: 24px;
         padding-right: 24px;
-    }
-
-    .banner-three .banner-three__slider-single .row {
-        justify-content: flex-start !important;
-    }
-
-    .banner-three .banner-three__content {
-        padding-left: 0;
-        padding-right: 0;
-        width: 100%;
-        max-width: 100%;
     }
 
     .banner-three .banner-three__content .cta {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0;
-        margin-top: 40px;
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    .banner-three .social {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .banner-three .banner-three__slider-single {
+        padding: 160px 0 660px;
     }
 
     .banner-three .banner-three__slider-progress-wrapper {
-        display: block !important;
-        position: absolute;
-        bottom: 40px;
-        left: 0;
-        right: 0;
-        z-index: 2;
+        bottom: 48px;
     }
 
     .banner-three .banner-three__slider-progress {
         flex-direction: column;
         align-items: flex-start;
         flex-wrap: nowrap;
-        gap: 0;
+        gap: 20px;
         max-width: 100%;
-        padding-left: 24px;
-        padding-right: 24px;
+        overflow: visible;
     }
 
     .banner-three .banner-three__slider-progress .single-item {
-        min-width: 0 !important;
+        min-width: 0;
         width: 100%;
-        max-width: none;
-        margin-bottom: 20px;
-    }
-
-    .banner-three .banner-three__slider-progress .single-item:last-child {
-        margin-bottom: 0;
+        max-width: 300px;
     }
 
     .banner-three .banner-three__slider-progress .single-item p {
         text-transform: uppercase;
         font-size: 13px;
-        font-weight: 600;
         letter-spacing: 0.04em;
         margin: 8px 0 10px;
-        color: #888;
     }
 
     .banner-three .banner-three__slider-progress .single-item span {
-        display: block;
         font-size: 14px;
         font-weight: 600;
-        color: #888;
-        line-height: 1;
-    }
-
-    .banner-three .banner-three__slider-progress .single-item-active p {
-        color: #fff;
-    }
-
-    .banner-three .social {
-        display: none;
     }
 
     .banner-three .arrow-img,
     .banner-three .dot-img {
         display: none;
-    }
-}
-
-@media only screen and (max-width: 767.98px) {
-    .banner-three .banner-three__content h1.light-title {
-        font-size: 40px;
-        line-height: 60px;
     }
 }
 
@@ -311,34 +267,14 @@
         font-size: 12px;
     }
 
-    .banner-three .banner-three__slider-single {
-        padding: 160px 0 200px;
-    }
-
-    .banner-three .banner-three__content h1.light-title {
-        font-size: 24px;
-        line-height: 40px;
-    }
-
-    .banner-three .banner-three__content .cta {
-        margin-top: 40px;
-    }
-
-    .banner-three .banner-three__slider-progress-wrapper {
-        bottom: 32px;
+    .banner-three .banner-three__content,
+    .banner-three .banner-three__slider-progress {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .banner-three .banner-three__slider-progress .single-item {
-        margin-bottom: 16px;
-    }
-
-    .banner-three .banner-three__slider-progress .single-item p {
-        font-size: 12px;
-        margin: 6px 0 8px;
-    }
-
-    .banner-three .banner-three__slider-progress .single-item span {
-        font-size: 13px;
+        max-width: 260px;
     }
 
     .section__header .title {

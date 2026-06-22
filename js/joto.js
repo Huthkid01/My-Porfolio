@@ -57,12 +57,12 @@
     }
 
     function setActiveTab(index) {
-        document.querySelectorAll('.banner-three__slider-progress').forEach((group) => {
-            group.querySelectorAll('.single-item').forEach((el, i) => {
-                el.classList.toggle('single-item-active', i === index);
-                if (i === index) void el.offsetWidth;
-            });
-        });
+        const items = document.querySelectorAll('.banner-three__slider-progress .single-item');
+        items.forEach((el) => el.classList.remove('single-item-active'));
+        const active = items[index];
+        if (!active) return;
+        void active.offsetWidth;
+        active.classList.add('single-item-active');
     }
 
     if (typeof Swiper !== 'undefined') {
@@ -72,7 +72,6 @@
             loop: true,
             speed: 1000,
             centeredSlides: true,
-            autoHeight: true,
             autoplay: {
                 delay: HERO_DELAY,
                 disableOnInteraction: false,
@@ -82,23 +81,16 @@
                 init(sw) {
                     setActiveTab(sw.realIndex);
                     loadHeroSlideBg(sw.slides[sw.activeIndex]);
-                    sw.updateAutoHeight();
                     const schedule = window.requestIdleCallback || ((cb) => setTimeout(cb, 1200));
                     schedule(() => preloadRemainingHeroSlides(sw));
                 },
-                slideChange(sw) {
-                    setActiveTab(sw.realIndex);
-                    sw.updateAutoHeight();
-                },
+                slideChange(sw) { setActiveTab(sw.realIndex); },
                 slideChangeTransitionStart(sw) { loadHeroSlideBg(sw.slides[sw.activeIndex]); },
             },
         });
 
-        document.querySelector('.banner-three')?.addEventListener('click', (e) => {
-            const tab = e.target.closest('.banner-three__slider-progress .single-item');
-            if (!tab || !heroSwiper) return;
-            const idx = Number(tab.dataset.slide);
-            if (!Number.isNaN(idx)) heroSwiper.slideToLoop(idx);
+        document.querySelectorAll('.banner-three__slider-progress .single-item').forEach((tab, idx) => {
+            tab.addEventListener('click', () => heroSwiper.slideToLoop(idx));
         });
     }
 
