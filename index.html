@@ -3,710 +3,485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odusanya Uthman | Portfolio</title>
-    <link rel="icon" href="images/myimage.png" type="image/png">
-    <link rel="shortcut icon" href="images/myimage.png" type="image/png">
-    <link rel="icon" href="images/myimage.png" type="image/png" sizes="32x32">
-    <link rel="icon" href="images/myimage.png" type="image/png" sizes="16x16">
-    <link rel="apple-touch-icon" href="images/myimage.png" sizes="180x180">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#38bdf8">
-    <!-- Performance optimizations -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Professional portfolio of Odusanya Uthman, Full-Stack Web Developer specializing in React, TypeScript, and modern web technologies">
-    <meta name="keywords" content="portfolio, frontend developer, web developer, React, TypeScript, JavaScript, HTML, CSS">
+    <title>Odusanya Uthman | Full-Stack Web Developer</title>
+    <meta name="description" content="Portfolio of Odusanya Uthman — Full-Stack Web Developer specializing in React, TypeScript, Supabase, and modern web products.">
     <meta name="author" content="Odusanya Uthman">
-    <!-- Preconnect to external domains for faster loading -->
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="images/myimage.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="images/myimage.png" as="image">
-    <!-- Load CSS first -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Fonts load async — display=swap avoids invisible text -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/joto-theme.css">
+    <link rel="stylesheet" href="css/joto-compat.css">
 </head>
 <body>
-    <div id="loader">
-        <div class="loader-content">
-            <div class="spinner"></div>
-            <p>Loading Portfolio...</p>
-        </div>
-    </div>
-    <a href="#main-content" id="skip-link">Skip to main content</a>
-    <header>
-        <nav>
-            <div class="logo">Odusanya Uthman</div>
-            <button class="hamburger" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills & Technologies</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#case-studies">Case Studies</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="my-app">
+        <header class="header">
+            <div class="primary-navbar tertiary--navbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="navbar p-0">
+                                <div class="navbar__logo">
+                                    <a href="#home" aria-label="Go to home">OU</a>
+                                </div>
+                                <div class="navbar__menu d-none d-lg-flex">
+                                    <ul>
+                                        <li class="navbar__item nav-fade">
+                                            <a href="mailto:odusanyauthman2019@gmail.com">
+                                                <i class="fa-solid fa-envelope"></i>odusanyauthman2019@gmail.com
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="navbar__options">
+                                    <button class="open-offcanvas-nav d-flex" aria-label="Toggle mobile menu" type="button">
+                                        <i class="fa-solid fa-bars-staggered"></i> Menu
+                                    </button>
+                                    <div class="tertiary-cta d-none d-sm-flex">
+                                        <a class="btn btn--secondary" href="#contact">Let's Talk</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <main id="main-content">
-    <section id="home" class="hero">
-        <div id="hero-bg-3d" aria-hidden="true"></div>
-        <div class="hero-inner">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Odusanya Uthman</span></h1>
-                <h2>Full-Stack Engineer • React & TypeScript</h2>
-                <p class="hero-lead">I build fast, accessible web apps with clean UI, real-time features, and reliable integrations.</p>
-                <p class="hero-meta">Open to Frontend / Full‑Stack (React) roles • Remote</p>
-                <a href="images/Uthman_Odusanya_Resume.pdf" id="resume-btn" class="btn btn-secondary">My Resume</a>
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Hire Me</a>
-            </div>
-            <div class="hero-image">
-                <img src="images/myimage.png" alt="Odusanya Uthman" width="350" height="350" fetchpriority="high" decoding="async">
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I’m a frontend web developer who builds production-ready web experiences—from responsive UI to auth, database-backed features, and third‑party integrations. I work with React, TypeScript, Tailwind, and Supabase to deliver accessible interfaces, real-time updates, and performance-focused builds that feel polished and easy to use.</p>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2>My Services</h2>
-            <p class="section-lead">End-to-end digital support for brands and businesses—from building fast web products to growing visibility and reach online.</p>
-            <div class="services-grid">
-                <article class="service-card">
-                    <h3>Web Development</h3>
-                    <ul class="service-list">
-                        <li>React, TypeScript &amp; modern frontends</li>
-                        <li>Full-stack apps with Supabase &amp; APIs</li>
-                        <li>E-commerce &amp; booking websites</li>
-                        <li>Responsive UI &amp; performance optimization</li>
-                    </ul>
-                </article>
-                <article class="service-card">
-                    <h3>SEO</h3>
-                    <ul class="service-list">
-                        <li>On-page &amp; technical SEO setup</li>
-                        <li>Meta tags, sitemaps &amp; structured data</li>
-                        <li>Page speed &amp; mobile-friendly fixes</li>
-                        <li>Content structure for better rankings</li>
-                    </ul>
-                </article>
-                <article class="service-card">
-                    <h3>Ads &amp; Marketing</h3>
-                    <ul class="service-list">
-                        <li>Social media ad campaigns</li>
-                        <li>Google &amp; Meta ads setup</li>
-                        <li>Landing pages for conversions</li>
-                        <li>Tracking pixels &amp; analytics</li>
-                    </ul>
-                </article>
-                <article class="service-card">
-                    <h3>Other Services</h3>
-                    <ul class="service-list">
-                        <li>Website maintenance &amp; updates</li>
-                        <li>WordPress &amp; CMS support</li>
-                        <li>Integrations (payments, WhatsApp, Email)</li>
-                        <li>Technical consulting &amp; audits</li>
-                    </ul>
-                </article>
-            </div>
-            <div class="services-cta">
-                <a href="#contact" class="btn">Discuss a Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2>My Experience</h2>
-            <p>Frontend and full-stack developer with experience building production-ready web apps—from responsive UI and client projects to technical operations at YEHGS (UK) Limited.</p>
-            <div class="view-more-container">
-                <span class="view-more-arrow" data-target="experience-content">▼ View More</span>
-            </div>
-            <div id="experience-content" class="collapsible-content" style="display: none;">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Technical Web Administrator</h3>
-                        <p class="company">YEHGS (UK) Limited · Ikeja, Lagos</p>
-                        <p class="period">May 2026 – Present</p>
-                        <ul class="experience-points">
-                            <li>Optimized product data management systems, ensuring seamless synchronization between warehouse inventory and digital storefronts via real-time automation.</li>
-                            <li>Orchestrated weekly technical stakeholder meetings, translating complex performance metrics into actionable business strategies for senior management.</li>
-                            <li>Developed structured technical reporting frameworks to monitor system health and resolve operational bottlenecks efficiently.</li>
+        <div class="offcanvas-nav">
+            <div class="offcanvas-menu">
+                <nav class="offcanvas-menu__wrapper" data-lenis-prevent="true">
+                    <div class="offcanvas-menu__header nav-fade">
+                        <div class="logo"><a href="#home">Odusanya Uthman</a></div>
+                        <button class="close-offcanvas-menu" aria-label="Close menu" type="button">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="offcanvas-menu__list">
+                        <ul>
+                            <li class="navbar__item nav-fade"><a href="#home">Home</a></li>
+                            <li class="navbar__item nav-fade"><a href="#services">Services</a></li>
+                            <li class="navbar__item nav-fade"><a href="#about">About</a></li>
+                            <li class="navbar__item nav-fade"><a href="#portfolio">Portfolio</a></li>
+                            <li class="navbar__item nav-fade"><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="timeline-item">
-                        <h3>Full-Stack Project Lead</h3>
-                        <p class="company">Freelance Frontend Developer · Remote</p>
-                        <p class="period">November 2023 – Present</p>
-                        <ul class="experience-points">
-                            <li>Engineered and deployed 10+ robust web applications for SMEs, utilizing modern frontend architectures to drive engagement and performance.</li>
-                            <li>Integrated secure multi-currency payment workflows and automated notification systems, significantly reducing manual transaction overhead for clients.</li>
-                            <li>Architected accessible and high-performance user interfaces from high-fidelity Figma designs, ensuring strict adherence to WCAG accessibility standards.</li>
-                        </ul>
+                    <div class="offcanvas-menu__options nav-fade">
+                        <a class="btn btn--secondary" href="#contact">Let's Talk</a>
                     </div>
-                </div>
+                    <div class="offcanvas-menu__social social nav-fade">
+                        <a href="https://www.linkedin.com/in/odusanya-uthman-43aab0363/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/huthkid.dev" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/2348144170968" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </nav>
             </div>
         </div>
-    </section>
 
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-container">
-                <div class="skills-scroll">
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="40" height="40">
-                        </div>
-                        <div class="skill-name">HTML</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="40" height="40">
-                        </div>
-                        <div class="skill-name">CSS</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40">
-                        </div>
-                        <div class="skill-name">JavaScript</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40">
-                        </div>
-                        <div class="skill-name">TypeScript</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40">
-                        </div>
-                        <div class="skill-name">Node.js</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40">
-                        </div>
-                        <div class="skill-name">React</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="40" height="40">
-                        </div>
-                        <div class="skill-name">Figma</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="40" height="40">
-                        </div>
-                        <div class="skill-name">Git</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="40" height="40" onerror="this.src='https://img.icons8.com/ios/50/ffffff/github.png'" style="filter: invert(1);">
-                        </div>
-                        <div class="skill-name">GitHub</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40">
-                        </div>
-                        <div class="skill-name">Supabase</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://img.icons8.com/ios-filled/50/38bdf8/api-settings.png" alt="API Integration" width="40" height="40">
-                        </div>
-                        <div class="skill-name">API Integration</div>
-                    </div>
-                    <!-- Duplicate first few for seamless loop -->
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="40" height="40">
-                        </div>
-                        <div class="skill-name">HTML</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="40" height="40">
-                        </div>
-                        <div class="skill-name">CSS</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40">
-                        </div>
-                        <div class="skill-name">JavaScript</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40">
-                        </div>
-                        <div class="skill-name">TypeScript</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40">
-                        </div>
-                        <div class="skill-name">Node.js</div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40">
-                        </div>
-                        <div class="skill-name">React</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/prudence.png" alt="Prudence Property — Real Estate & Property Management Website" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3>Prudence Property — Real Estate & Property Management Website</h3>
-                        <p>A modern corporate website for a Lagos-based property management company, showcasing residential/commercial services, company values, a property gallery, and careers. Includes consultation requests via a contact form, job applications with resume uploads, and a floating WhatsApp button. Built for performance, mobile responsiveness, and SEO discoverability.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Vite</span>
-                            <span>Tailwind CSS</span>
-                            <span>Framer Motion</span>
-                            <span>React Router</span>
-                            <span>FormSubmit</span>
-                            <span>Vercel</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://prudenceproperty.com" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+        <main>
+            <section id="home" class="banner-three">
+                <div class="banner-three__slider-w">
+                    <div class="swiper banner-three__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="banner-three__slider-single" style="background-image:url('images/myimage.png')">
+                                    <div class="container">
+                                        <div class="row justify-content-end">
+                                            <div class="col-12 col-lg-9 offset-lg-3 col-xl-7 offset-xl-4">
+                                                <div class="banner-three__content">
+                                                    <h1 class="light-title">Full-stack web developer crafting digital excellence</h1>
+                                                    <div class="section__content-cta cta">
+                                                        <div class="arrow-wrapper d-none d-md-block"><span class="arrow"></span></div>
+                                                        <a class="btn btn--secondary" href="#portfolio">View work <i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-three__slider-single" style="background-image:url('images/Smartcrew.png')">
+                                    <div class="container">
+                                        <div class="row justify-content-end">
+                                            <div class="col-12 col-lg-9 offset-lg-3 col-xl-7 offset-xl-4">
+                                                <div class="banner-three__content">
+                                                    <h1 class="light-title">React, TypeScript &amp; scalable product builds</h1>
+                                                    <div class="section__content-cta cta">
+                                                        <div class="arrow-wrapper d-none d-md-block"><span class="arrow"></span></div>
+                                                        <a class="btn btn--secondary" href="#services">My services <i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-three__slider-single" style="background-image:url('images/ramadan-tracker.png')">
+                                    <div class="container">
+                                        <div class="row justify-content-end">
+                                            <div class="col-12 col-lg-9 offset-lg-3 col-xl-7 offset-xl-4">
+                                                <div class="banner-three__content">
+                                                    <h1 class="light-title">SEO, ads &amp; end-to-end digital solutions</h1>
+                                                    <div class="section__content-cta cta">
+                                                        <div class="arrow-wrapper d-none d-md-block"><span class="arrow"></span></div>
+                                                        <a class="btn btn--secondary" href="#contact">Let's talk <i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/Smartcrew.png" alt="SmartCrew Scheduler" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3>SmartCrew Scheduler — Workforce Scheduling & Time Tracking</h3>
-                        <p>A workforce scheduling and time-tracking web app that helps teams manage shifts faster. Admins can add employees, create and publish schedules, generate schedules with AI, and monitor attendance in real time. Employees can view upcoming shifts and clock in/out with a built-in time clock.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>Vite</span>
-                            <span>Tailwind CSS</span>
-                            <span>Shadcn/UI</span>
-                            <span>Supabase (Auth + Postgres + RLS + Realtime)</span>
-                            <span>Supabase Edge Functions (Deno)</span>
-                            <span>Groq API (Llama)</span>
-                            <span>React Big Calendar</span>
-                            <span>Date-fns</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://smart-crew-scheduler.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+                <div class="social d-flex">
+                    <a href="https://www.linkedin.com/in/odusanya-uthman-43aab0363/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/huthkid.dev" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/2348144170968" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+
+                <span class="dot-img decorative-dot" aria-hidden="true"></span>
+
+                <div class="banner-three__slider-progress-wrapper">
+                    <div class="container">
+                        <div class="banner-three__slider-progress">
+                            <button type="button" class="single-item single-item-active" data-slide="0">
+                                <span>01</span>
+                                <p>Full-Stack Dev</p>
+                                <div class="slider-progress"><div class="inProgress"></div></div>
+                            </button>
+                            <button type="button" class="single-item" data-slide="1">
+                                <span>02</span>
+                                <p>React &amp; TypeScript</p>
+                                <div class="slider-progress"><div class="inProgress"></div></div>
+                            </button>
+                            <button type="button" class="single-item" data-slide="2">
+                                <span>03</span>
+                                <p>SEO &amp; Growth</p>
+                                <div class="slider-progress"><div class="inProgress"></div></div>
+                            </button>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/ramadan-tracker.png" alt="Ramadan Ibadah Tracker" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3>Ramadan Ibadah Tracker — Worship Tracking Web App</h3>
-                        <p>A mobile-first Ramadan companion to track Salah, Qur'an recitation, dhikr, fasting, and reflections. Includes daily/30-day progress, a detailed daily tracker, a Hijri-aware Ramadan calendar, and a Qur'an page that remembers your Surah and resumes audio with verse-by-verse highlighting. Also features live prayer times and Qibla direction (geolocation), daily ayah/hadith inspiration, theme switching, and auth-protected dashboards (email/Google + password reset).</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>JavaScript (ES6+)</span>
-                            <span>Vite</span>
-                            <span>CSS3</span>
-                            <span>React Router</span>
-                            <span>Context API</span>
-                            <span>localStorage</span>
-                            <span>Supabase Auth & Database</span>
-                            <span>AlQuran Cloud API</span>
-                            <span>Prayer Times API</span>
-                            <span>Geolocation API</span>
-                            <span>Vercel</span>
+            <section id="services" class="section service-f fade-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section__header--secondary g-ind">
+                                <div class="row gaper align-items-center">
+                                    <div class="col-12 col-lg-8">
+                                        <div class="section__header text-center text-lg-start mb-0">
+                                            <span class="sub-title">What I offer <i class="fa-solid fa-arrow-right"></i></span>
+                                            <h2 class="title title-anim">my services</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <div class="text-center text-lg-end">
+                                            <a class="btn btn--primary text-capitalize" href="#contact">Hire me</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-buttons">
-                            <a href="https://ramadan-ibadah-tracker.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="service-f-wrapper">
+                                <div class="service-f-single fade-top service-f-single-active">
+                                    <div class="single-item">
+                                        <span class="sub-title">01 <i class="fa-solid fa-arrow-right"></i></span>
+                                        <h4>Web Development</h4>
+                                        <div class="p-single">
+                                            <p>I build production-ready web apps with React, TypeScript, Tailwind, and Supabase — from responsive UI to auth, databases, realtime features, and third-party integrations.</p>
+                                        </div>
+                                    </div>
+                                    <div class="p-single single-item p-sm">
+                                        <ul>
+                                            <li><i class="fa-solid fa-angle-right"></i>React &amp; TypeScript frontends</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Full-stack apps with Supabase</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>E-commerce &amp; booking sites</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Performance &amp; accessibility</li>
+                                        </ul>
+                                    </div>
+                                    <div class="single-item p-single p-sm">
+                                        <img src="images/Smartcrew.png" alt="Web development project preview" loading="lazy" width="300" height="200">
+                                    </div>
+                                    <button class="toggle-service-f" type="button" aria-label="Toggle service details"></button>
+                                </div>
+                                <div class="service-f-single fade-top">
+                                    <div class="single-item">
+                                        <span class="sub-title">02 <i class="fa-solid fa-arrow-right"></i></span>
+                                        <h4>SEO</h4>
+                                        <div class="p-single">
+                                            <p>Technical and on-page SEO to help your site rank better — fast loading, clean structure, and content optimized for search engines.</p>
+                                        </div>
+                                    </div>
+                                    <div class="p-single single-item p-sm">
+                                        <ul>
+                                            <li><i class="fa-solid fa-angle-right"></i>On-page &amp; technical SEO</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Meta tags &amp; sitemaps</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Page speed optimization</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Mobile-friendly fixes</li>
+                                        </ul>
+                                    </div>
+                                    <div class="single-item p-single p-sm">
+                                        <img src="images/USSD-Directory.png" alt="SEO optimized project preview" loading="lazy" width="300" height="200">
+                                    </div>
+                                    <button class="toggle-service-f" type="button" aria-label="Toggle service details"></button>
+                                </div>
+                                <div class="service-f-single fade-top">
+                                    <div class="single-item">
+                                        <span class="sub-title">03 <i class="fa-solid fa-arrow-right"></i></span>
+                                        <h4>Ads &amp; Marketing</h4>
+                                        <div class="p-single">
+                                            <p>Campaign setup and conversion-focused landing pages with tracking so you know what's working across social and search.</p>
+                                        </div>
+                                    </div>
+                                    <div class="p-single single-item p-sm">
+                                        <ul>
+                                            <li><i class="fa-solid fa-angle-right"></i>Social media ad campaigns</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Google &amp; Meta ads setup</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Landing pages for conversions</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Analytics &amp; tracking pixels</li>
+                                        </ul>
+                                    </div>
+                                    <div class="single-item p-single p-sm">
+                                        <img src="images/Reeree.png" alt="Marketing project preview" loading="lazy" width="300" height="200">
+                                    </div>
+                                    <button class="toggle-service-f" type="button" aria-label="Toggle service details"></button>
+                                </div>
+                                <div class="service-f-single fade-top">
+                                    <div class="single-item">
+                                        <span class="sub-title">04 <i class="fa-solid fa-arrow-right"></i></span>
+                                        <h4>Other Services</h4>
+                                        <div class="p-single">
+                                            <p>Ongoing support, integrations, and consulting — payments, WhatsApp, EmailJS, WordPress, and technical audits.</p>
+                                        </div>
+                                    </div>
+                                    <div class="p-single single-item p-sm">
+                                        <ul>
+                                            <li><i class="fa-solid fa-angle-right"></i>Website maintenance</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>WordPress &amp; CMS support</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Payment &amp; API integrations</li>
+                                            <li><i class="fa-solid fa-angle-right"></i>Technical consulting</li>
+                                        </ul>
+                                    </div>
+                                    <div class="single-item p-single p-sm">
+                                        <img src="images/soothingmassage.png" alt="Additional services preview" loading="lazy" width="300" height="200">
+                                    </div>
+                                    <button class="toggle-service-f" type="button" aria-label="Toggle service details"></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <span class="dot-img decorative-dot" aria-hidden="true"></span>
+            </section>
 
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/USSD-Directory.png" alt="USSD Directory Africa" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3>USSD Directory Africa — USSD Codes Lookup Web App</h3>
-                        <p>A responsive web app that centralizes USSD codes for major African networks and banks, searchable by country, provider, or category. Includes instant search with live results, detail pages with copy/dial actions, and a “Submit Code” popup via Formspree. Optimized for fast loading, mobile, and SEO with dynamic meta tags.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>JavaScript (ES6+)</span>
-                            <span>Vite</span>
-                            <span>Tailwind CSS</span>
-                            <span>React Router</span>
-                            <span>Axios</span>
-                            <span>Formspree</span>
-                            <span>react-helmet-async</span>
-                            <span>Lucide React</span>
+            <section id="about" class="section agency agency-two">
+                <div class="container">
+                    <div class="row gaper align-items-center">
+                        <div class="col-12 col-lg-6">
+                            <div class="agency__thumb">
+                                <img src="images/myimage.png" alt="Odusanya Uthman" class="fade-left" loading="lazy" width="600" height="600">
+                            </div>
                         </div>
-                        <div class="project-buttons">
-                            <a href="https://ussd-directory.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+                        <div class="col-12 col-lg-6">
+                            <div class="agency__content section__content">
+                                <span class="sub-title">About me <i class="fa-solid fa-arrow-right"></i></span>
+                                <h2 class="title title-anim">Building products that perform</h2>
+                                <div class="paragraph">
+                                    <p>I'm Odusanya Uthman, a full-stack web developer based in Lagos. I ship production-ready experiences — from responsive UI and client projects to technical operations at YEHGS (UK) Limited. I've deployed 10+ web applications for SMEs using React, TypeScript, Tailwind, and Supabase, with a focus on accessibility, performance, and clean delivery.</p>
+                                </div>
+                                <div class="section__content-cta cta-group">
+                                    <a class="btn btn--primary text-capitalize" href="images/Uthman_Odusanya_Resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                                    <a class="btn btn--secondary text-capitalize" href="#contact">Contact me</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <span class="star decorative-star" aria-hidden="true"></span>
+                <span class="dot-large decorative-dot" aria-hidden="true"></span>
+            </section>
 
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/Reeree.png" alt="REEREE.NG Storefront" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3>REEREE.NG — Storefront & Email Service</h3>
-                        <p>A mobile-responsive e-commerce storefront for modest fashion with collections, product pages, a persistent cart, and streamlined Flutterwave checkout. Includes cookie consent, SEO meta tags, smooth micro-interactions, and route-level code splitting. Also features a secure serverless API for order notifications and customer confirmation emails with validation and environment-secured credentials.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>Vite</span>
-                            <span>Tailwind CSS</span>
-                            <span>React Router</span>
-                            <span>Zustand</span>
-                            <span>Flutterwave</span>
-                            <span>Vercel</span>
-                            <span>Node.js</span>
-                            <span>Nodemailer</span>
-                            <span>Express</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://reeree-ng.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+            <section id="portfolio" class="section portfolio portfolio-three pb-0">
+                <div class="portfolio__text-slider-w">
+                    <div class="swiper portfolio__text-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><div class="portfolio__text-slider-single"><h2 class="h1">my portfolio <i class="fa-solid fa-arrow-down-right"></i></h2></div></div>
+                            <div class="swiper-slide"><div class="portfolio__text-slider-single"><h2 class="h1 str">selected work <i class="fa-solid fa-arrow-down-right"></i></h2></div></div>
+                            <div class="swiper-slide"><div class="portfolio__text-slider-single"><h2 class="h1">my portfolio <i class="fa-solid fa-arrow-down-right"></i></h2></div></div>
+                            <div class="swiper-slide"><div class="portfolio__text-slider-single"><h2 class="h1 str">selected work <i class="fa-solid fa-arrow-down-right"></i></h2></div></div>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/logistics.png" alt="Platinum Logistics Recruitment Landing Page" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3>Platinum Logistics Recruitment Landing Page</h3>
-                        <p>Created a mobile-responsive recruitment landing page with a professional design, 15+ field application form, file uploads, real-time validation, FormSubmit integration, smooth animations, and accessibility compliance.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>FormSubmit</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://platinumlogisticapplicant.com/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/tastebeta.png" alt="TasteBeta - Full-Stack Food Ordering Platform" loading="lazy">
-                    </div>
-                        <div class="project-info">
-                        <h3>TasteBeta - Full-Stack Food Ordering Platform</h3>
-                        <p>A full-stack food ordering platform built for Nigerian fast-food restaurants with an interactive menu, advanced cart, Flutterwave payments, real-time WhatsApp order notifications, and an admin dashboard for order management.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript (ES6+)</span>
-                            <span>Flutterwave API</span>
-                            <span>WhatsApp API</span>
-                            <span>LocalStorage</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://tastebeta.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/soothingmassage.png" alt="Soothing Massage Studio Website" loading="lazy">
-                    </div>
-                        <div class="project-info">
-                        <h3>Soothing Massage Studio Website</h3>
-                        <p>A responsive massage therapy booking website with an interactive hero carousel, services showcase, transparent pricing, customer reviews, and a complete booking flow with EmailJS email notifications.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>Vanilla JavaScript</span>
-                            <span>EmailJS</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://soothingmassage.fun/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/luxegloss.png" alt="Luxe Gloss E-Commerce landing page" loading="lazy">
-                    </div>
-                        <div class="project-info">
-                        <h3>Luxe Gloss E-Commerce landing page </h3>
-                        <p>A modern lip gloss landing page where customers select quantities, make payments online, and are redirected to WhatsApp to confirm their orders with the owner.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Supabase</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://luxe-gloss.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="portfolio-three__slider-w">
+                                <div class="swiper portfolio-three__slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="portfolio__single topy-tilt">
+                                                <img src="images/prudence.png" alt="Prudence Property" loading="lazy">
+                                                <div class="portfolio__single-content">
+                                                    <a href="https://prudenceproperty.com" target="_blank" rel="noopener noreferrer" aria-label="Open Prudence Property"><i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    <h4><a href="https://prudenceproperty.com" target="_blank" rel="noopener noreferrer">Prudence Property</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="portfolio__single topy-tilt">
+                                                <img src="images/Smartcrew.png" alt="SmartCrew Scheduler" loading="lazy">
+                                                <div class="portfolio__single-content">
+                                                    <a href="https://smart-crew-scheduler.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open SmartCrew"><i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    <h4><a href="https://smart-crew-scheduler.vercel.app/" target="_blank" rel="noopener noreferrer">SmartCrew Scheduler</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="portfolio__single topy-tilt">
+                                                <img src="images/ramadan-tracker.png" alt="Ramadan Ibadah Tracker" loading="lazy">
+                                                <div class="portfolio__single-content">
+                                                    <a href="https://ramadan-ibadah-tracker.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open Ramadan Tracker"><i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    <h4><a href="https://ramadan-ibadah-tracker.vercel.app" target="_blank" rel="noopener noreferrer">Ramadan Ibadah Tracker</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="portfolio__single topy-tilt">
+                                                <img src="images/Reeree.png" alt="REEREE.NG" loading="lazy">
+                                                <div class="portfolio__single-content">
+                                                    <a href="https://reeree-ng.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open REEREE.NG"><i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    <h4><a href="https://reeree-ng.vercel.app/" target="_blank" rel="noopener noreferrer">REEREE.NG Storefront</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="portfolio__single topy-tilt">
+                                                <img src="images/USSD-Directory.png" alt="USSD Directory Africa" loading="lazy">
+                                                <div class="portfolio__single-content">
+                                                    <a href="https://ussd-directory.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open USSD Directory"><i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    <h4><a href="https://ussd-directory.vercel.app/" target="_blank" rel="noopener noreferrer">USSD Directory Africa</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="portfolio__single topy-tilt">
+                                                <img src="images/tastebeta.png" alt="TasteBeta" loading="lazy">
+                                                <div class="portfolio__single-content">
+                                                    <a href="https://tastebeta.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open TasteBeta"><i class="fa-solid fa-arrow-up-right"></i></a>
+                                                    <h4><a href="https://tastebeta.vercel.app/" target="_blank" rel="noopener noreferrer">TasteBeta</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-group">
+                                    <button type="button" class="slide-btn prev-portfolio" aria-label="Previous project"><i class="fa-solid fa-angle-left"></i></button>
+                                    <button type="button" class="slide-btn next-portfolio" aria-label="Next project"><i class="fa-solid fa-angle-right"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- <div class="project-card" data-aos="zoom-in">
-                    <div class="project-image">
-                        <img src="images/Trendware.png" alt="Trendware – Multi‑Currency Fashion Store">
-                    </div>
-                    <div class="project-info">
-                        <h3>Trendware – Multi‑Currency Fashion Store.</h3>
-                        <p>Modern fashion store with multi-currency support (NGN, USD, GBP). Features shopping cart, payment integration, and admin dashboard.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Supabase</span>
-                            <span>API Integration</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://trendware-pi.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/luxestay.png" alt="LuxeStay Apartments">
-                    </div>
-                    <div class="project-info">
-                        <h3>LuxeStay Apartments </h3>
-                        <p>A luxury apartment booking website built with HTML, CSS, and JavaScript, featuring image galleries, booking forms, and WhatsApp payment confirmation.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://luxestayapartment.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-
-            <div class="load-more-container">
-                <button type="button" id="load-more-btn" class="btn load-more-btn">View More</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="case-studies" class="case-studies">
-        <div class="container">
-            <h2>Case Studies</h2>
-            <p class="section-lead">Short breakdowns of the problems I solved, how I built the solution, and what mattered most.</p>
-            <div class="projects-grid">
-                <div id="case-study-smartcrew" class="project-card case-study-card" data-aos="zoom-in">
-                    <div class="project-info">
-                        <h3>SmartCrew Scheduler</h3>
-                        <div class="case-study-block">
-                            <h4>Problem</h4>
-                            <p>Manual scheduling creates conflicts, wasted time, and poor visibility into attendance.</p>
-                        </div>
-                        <div class="case-study-block">
-                            <h4>Solution</h4>
-                            <p>Built a workforce scheduling + time tracking app with AI schedule generation, publishing, and real-time attendance monitoring.</p>
-                        </div>
-                        <div class="case-study-block">
-                            <h4>Key Highlights</h4>
-                            <ul class="case-study-points">
-                                <li>Admin tools for employees, schedules, publishing, and conflict-free AI generation.</li>
-                                <li>Employee dashboard for upcoming shifts and clock in/out time clock.</li>
-                                <li>Supabase Auth + Postgres + RLS + Realtime and edge functions for secure workflows.</li>
-                            </ul>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://smart-crew-scheduler.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View App</a>
+            <section id="contact" class="cta-two section pb-0">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xxl-11">
+                            <div class="cta-two-wrapper bg-img cta-gradient">
+                                <div class="row gaper align-items-center">
+                                    <div class="col-12 col-lg-8">
+                                        <div class="cta-two__content">
+                                            <span>Hello !</span>
+                                            <h2 class="title-anim">ready to work together?</h2>
+                                            <h5><a href="mailto:odusanyauthman2019@gmail.com">email: odusanyauthman2019@gmail.com</a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <div class="text-start text-lg-end">
+                                            <a class="btn btn--tertiary" href="https://wa.me/2348144170968" target="_blank" rel="noopener noreferrer">Start a project <i class="fa-solid fa-arrow-up-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form id="contact-form" class="contact-form fade-top">
+                                <div class="row gaper">
+                                    <div class="col-12 col-md-6">
+                                        <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="message" rows="5" placeholder="Your message" required aria-label="Your message"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn--primary" id="submit-btn">Send Message</button>
+                                        <p id="form-message" class="form-message" role="status"></p>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
 
-                <div id="case-study-ramadan" class="project-card case-study-card" data-aos="zoom-in">
-                    <div class="project-info">
-                        <h3>Ramadan Ibadah Tracker</h3>
-                        <div class="case-study-block">
-                            <h4>Problem</h4>
-                            <p>Users needed a focused way to track worship routines and stay consistent across Ramadan.</p>
-                        </div>
-                        <div class="case-study-block">
-                            <h4>Solution</h4>
-                            <p>Designed a mobile-first tracker with progress views, a Hijri-aware calendar, and a Qur’an experience that resumes where you left off.</p>
-                        </div>
-                        <div class="case-study-block">
-                            <h4>Key Highlights</h4>
-                            <ul class="case-study-points">
-                                <li>Daily and 30-day progress, detailed daily tracker, and theme switching.</li>
-                                <li>Prayer times + Qibla direction via geolocation, plus daily ayah/hadith inspiration.</li>
-                                <li>Auth-protected dashboards with email/Google login and password reset.</li>
-                            </ul>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://ramadan-ibadah-tracker.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">View App</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="case-study-ussd" class="project-card case-study-card" data-aos="zoom-in">
-                    <div class="project-info">
-                        <h3>USSD Directory Africa</h3>
-                        <div class="case-study-block">
-                            <h4>Problem</h4>
-                            <p>USSD codes are hard to find and often outdated, especially across countries and providers.</p>
-                        </div>
-                        <div class="case-study-block">
-                            <h4>Solution</h4>
-                            <p>Built a fast lookup app that centralizes USSD codes with instant search, detail pages, and user submissions.</p>
-                        </div>
-                        <div class="case-study-block">
-                            <h4>Key Highlights</h4>
-                            <ul class="case-study-points">
-                                <li>Search by country, provider, or category with live results and quick actions.</li>
-                                <li>Copy and dial actions on detail pages for mobile-first usability.</li>
-                                <li>SEO-focused build with dynamic meta tags and a “Submit Code” flow via Formspree.</li>
-                            </ul>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://ussd-directory.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View App</a>
+        <footer class="section footer-three pb-0">
+            <div class="footer-three__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer__copyright">
+                                <div class="row align-items-center gaper">
+                                    <div class="col-12 col-lg-8">
+                                        <div class="footer__copyright-text text-center text-lg-start">
+                                            <p>Copyright © <span id="copyYear"></span>, Odusanya Uthman. All Rights Reserved.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <div class="text-center text-lg-end">
+                                            <a class="logo" href="#home">OU</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>I'm always open to discussing new opportunities and interesting projects. Feel free to reach out!</p>
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit" id="submit-btn" class="btn">Send Message</button>
-                <div id="form-message" style="display: none; margin-top: 1rem; padding: 0.5rem; border-radius: 5px;"></div>
-            </form>
-        </div>
-    </section>
-
-    <div id="back-to-top-text" style="display: none; text-align: center; padding: 1rem; background-color: #1a1a1a; color: #38bdf8; cursor: pointer; font-weight: bold;">↑ Back to Top</div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills & Technologies</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#case-studies">Case Studies</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="social-links">
-                <h3>Connect with Me</h3>
-                <ul>
-                    <li><a href="https://www.instagram.com/huthkid.dev?igsh=MTA0aDBlaG1kd2wzZA%3D%3D&utm_source=qr" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></li>
-                    <li><a href="https://wa.me/2348144170968" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.742.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/></svg></a></li>
-                    <li><a href="https://www.linkedin.com/in/odusanya-uthman-43aab0363/" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
-                    <li><a href="mailto:odusanyauthman2019@gmail.com" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a></li>
-                </ul>
-            </div>
-        </div>
-        <p>&copy; <span id="year"></span> Odusanya Uthman. All rights reserved.</p>
-    </footer>
-
-
-
-
-
-    <div id="image-modal">
-        <span id="close-modal">&times;</span>
-        <img id="modal-image" alt="Project Image">
-    </div>
-
-    <div id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
-        <div class="resume-modal-content" role="document">
-            <div class="resume-modal-header">
-                <h3 id="resume-modal-title">Resume</h3>
-                <button type="button" id="close-resume-modal" aria-label="Close resume">&times;</button>
-            </div>
-            <div class="resume-modal-body">
-                <iframe id="resume-frame" title="Resume PDF" src="images/Uthman_Odusanya_Resume.pdf"></iframe>
-            </div>
-            <div class="resume-modal-actions">
-                <a href="images/Uthman_Odusanya_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn">Open in New Tab</a>
-                <a href="images/Uthman_Odusanya_Resume.pdf" download class="btn btn-secondary">Download</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Customer Support Chat Widget -->
-    <div id="chat-widget">
-        <div id="chat-toggle" class="chat-toggle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.742.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+        <button class="progress-wrap" type="button" title="Go to top" aria-label="Scroll to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102" aria-hidden="true">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" stroke="#ff7425" stroke-width="4" fill="none"></path>
             </svg>
-        </div>
-        <div id="chat-window" class="chat-window">
-            <div class="chat-header">
-                <h3>Customer Support</h3>
-                <span id="chat-close">&times;</span>
-            </div>
-            <div class="chat-messages">
-                <div class="message bot">
-                    <p>Hi there! 👋 How can I help you today?</p>
-                </div>
-            </div>
-            <div class="chat-input">
-                <textarea id="chat-input-text" placeholder="Type your message here..."></textarea>
-                <button id="chat-send">Send</button>
-            </div>
-        </div>
+        </button>
+
+        <div class="mouseCursor cursor-outer" aria-hidden="true"></div>
+        <div class="mouseCursor cursor-inner" aria-hidden="true"><span>Drag</span></div>
     </div>
 
-    <div id="snow"></div>
-    <script src="snow.js"></script>
-    <script src="background-3d.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/joto.js" defer></script>
 </body>
 </html>

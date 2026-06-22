@@ -1,0 +1,19 @@
+:root {
+    --theme-font: "Inter", sans-serif;
+    --theme-bg: #000000;
+    --theme-color: #ffffff;
+    --primary-color: #ff7425;
+    --secondary-color: #757575;
+    --tertiary-color: #0e0e0e;
+    --quaternary-color: #040404;
+    --senary-color: #191919;
+    --septenary-color: #101010;
+    --black: #000000;
+    --white: #ffffff;
+    --border-color: #414141;
+    --footer-border: #454545;
+    --transition: all 0.3s ease-in-out;
+    --section-pad: 130px;
+    --section-pad-md: 100px;
+    --container-max: 1320px;
+}
