@@ -43,6 +43,19 @@
     /* Hero slider + progress tabs */
     let heroSwiper = null;
 
+    function loadHeroSlideBg(slideEl) {
+        const single = slideEl?.querySelector('.banner-three__slider-single');
+        if (!single || single.dataset.bgLoaded) return;
+        const url = single.dataset.bg;
+        if (!url) return;
+        single.style.backgroundImage = `url('${url}')`;
+        single.dataset.bgLoaded = '1';
+    }
+
+    function preloadRemainingHeroSlides(swiper) {
+        swiper.slides.forEach((slide) => loadHeroSlideBg(slide));
+    }
+
     function setActiveTab(index) {
         const items = document.querySelectorAll('.banner-three__slider-progress .single-item');
         items.forEach((el) => el.classList.remove('single-item-active'));
@@ -65,8 +78,14 @@
                 pauseOnMouseEnter: true,
             },
             on: {
-                init(sw) { setActiveTab(sw.realIndex); },
+                init(sw) {
+                    setActiveTab(sw.realIndex);
+                    loadHeroSlideBg(sw.slides[sw.activeIndex]);
+                    const schedule = window.requestIdleCallback || ((cb) => setTimeout(cb, 1200));
+                    schedule(() => preloadRemainingHeroSlides(sw));
+                },
                 slideChange(sw) { setActiveTab(sw.realIndex); },
+                slideChangeTransitionStart(sw) { loadHeroSlideBg(sw.slides[sw.activeIndex]); },
             },
         });
 
