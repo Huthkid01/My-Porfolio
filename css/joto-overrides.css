@@ -62,7 +62,8 @@
     display: inline-block;
 }
 
-.banner-three .banner-three__content h1.hero-typewriter {
+.banner-three .banner-three__content h1.hero-typewriter,
+.banner-three .banner-three__content p.hero-typewriter {
     line-height: 1.15;
     max-width: 100%;
 }
@@ -123,6 +124,101 @@
 
 .cta-two__action {
     margin-top: 32px;
+}
+
+/* SEO — skip link, FAQ, footer links */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 10000;
+    padding: 12px 20px;
+    background: var(--primary-color);
+    color: var(--black);
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+.seo-faq__intro {
+    margin-top: 16px;
+    margin-bottom: 40px;
+    max-width: 640px;
+    color: #757575;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.seo-faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.seo-faq__item {
+    border: 1px solid #414141;
+    border-radius: 12px;
+    background: #181818;
+    overflow: hidden;
+}
+
+.seo-faq__item summary {
+    padding: 20px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+    list-style: none;
+    color: #fff;
+}
+
+.seo-faq__item summary::-webkit-details-marker {
+    display: none;
+}
+
+.seo-faq__item summary::after {
+    content: "+";
+    float: right;
+    color: var(--primary-color);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.seo-faq__item[open] summary::after {
+    content: "−";
+}
+
+.seo-faq__item p {
+    margin: 0;
+    padding: 0 24px 20px;
+    color: #757575;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.seo-faq__item p a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.footer__seo-links {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #757575;
+}
+
+.footer__seo-links a {
+    color: #757575;
+    text-decoration: underline;
+}
+
+.footer__seo-links a:hover {
+    color: var(--primary-color);
 }
 
 .portfolio__single > img,
@@ -209,6 +305,21 @@
 
 /* ── Responsive ── */
 @media (max-width: 991px) {
+    .seo-faq__intro {
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+
+    .seo-faq__item summary {
+        font-size: 16px;
+        padding: 16px 20px;
+    }
+
+    .seo-faq__item p {
+        font-size: 15px;
+        padding: 0 20px 16px;
+    }
+
     .primary-navbar .navbar__menu {
         display: none;
     }

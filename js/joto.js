@@ -83,9 +83,9 @@
 
     function cacheHeroTitles(swiper) {
         swiper.slides.forEach((slide) => {
-            const h1 = slide.querySelector('.banner-three__content h1.hero-typewriter');
-            if (h1 && !h1.dataset.typewriterText) {
-                h1.dataset.typewriterText = h1.textContent.trim();
+            const heroEl = slide.querySelector('.banner-three__content .hero-typewriter');
+            if (heroEl && !heroEl.dataset.typewriterText) {
+                heroEl.dataset.typewriterText = heroEl.textContent.trim();
             }
         });
     }
@@ -102,22 +102,22 @@
     }
 
     function getActiveHeroTitle(swiper) {
-        return swiper.slides[swiper.activeIndex]?.querySelector('.banner-three__content h1.hero-typewriter') || null;
+        return swiper.slides[swiper.activeIndex]?.querySelector('.banner-three__content .hero-typewriter') || null;
     }
 
-    function typeHeroTitle(h1, onComplete) {
-        if (!h1) {
+    function typeHeroTitle(heroEl, onComplete) {
+        if (!heroEl) {
             onComplete?.();
             return;
         }
 
         clearHeroTimers();
 
-        const fullText = h1.dataset.typewriterText || h1.textContent.trim();
-        h1.dataset.typewriterText = fullText;
+        const fullText = heroEl.dataset.typewriterText || heroEl.textContent.trim();
+        heroEl.dataset.typewriterText = fullText;
 
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            h1.innerHTML = fullText.split(/\s+/).map((word) => (
+            heroEl.innerHTML = fullText.split(/\s+/).map((word) => (
                 `<span class="hero-typewriter__word">${word}</span>`
             )).join(' ');
             onComplete?.();
@@ -125,11 +125,11 @@
         }
 
         const words = fullText.split(/\s+/).filter(Boolean);
-        h1.innerHTML = words.map(() => '<span class="hero-typewriter__word"></span>').join('')
+        heroEl.innerHTML = words.map(() => '<span class="hero-typewriter__word"></span>').join('')
             + '<span class="hero-typewriter__cursor" aria-hidden="true">|</span>';
 
-        const wordEls = h1.querySelectorAll('.hero-typewriter__word');
-        const cursor = h1.querySelector('.hero-typewriter__cursor');
+        const wordEls = heroEl.querySelectorAll('.hero-typewriter__word');
+        const cursor = heroEl.querySelector('.hero-typewriter__cursor');
         let wordIndex = 0;
         let charIndex = 0;
 
@@ -161,15 +161,20 @@
         clearHeroTimers();
         setActiveTab(swiper.realIndex);
 
-        const h1 = getActiveHeroTitle(swiper);
-        const text = h1?.dataset.typewriterText || h1?.textContent.trim() || '';
+        swiper.slides.forEach((slide, index) => {
+            const heroEl = slide.querySelector('.banner-three__content .hero-typewriter');
+            if (heroEl) heroEl.setAttribute('aria-hidden', index === swiper.activeIndex ? 'false' : 'true');
+        });
+
+        const heroEl = getActiveHeroTitle(swiper);
+        const text = heroEl?.dataset.typewriterText || heroEl?.textContent.trim() || '';
         const typeMs = estimateTypingMs(text);
         const totalMs = typeMs + HERO_HOLD_AFTER_TYPE;
 
         setActiveTab(swiper.realIndex, totalMs);
         loadHeroSlideBg(swiper.slides[swiper.activeIndex]);
 
-        typeHeroTitle(h1, () => {
+        typeHeroTitle(heroEl, () => {
             heroAdvanceTimer = setTimeout(() => {
                 swiper.slideNext();
             }, HERO_HOLD_AFTER_TYPE);

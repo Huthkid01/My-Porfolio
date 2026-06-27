@@ -12,6 +12,7 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#ff7425">
     <link rel="canonical" href="https://codedbyuthman.online/contact-us">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="icon" href="images/favicon-128.png" type="image/png" sizes="128x128">
     <link rel="apple-touch-icon" href="images/favicon-128.png">
     <link rel="manifest" href="site.webmanifest">
@@ -24,6 +25,9 @@
     <meta property="og:description" content="Get in touch with Odusanya Uthman for web development, full-stack apps, SEO, and deployment in Lagos, Nigeria.">
     <meta property="og:url" content="https://codedbyuthman.online/contact-us">
     <meta property="og:image" content="https://codedbyuthman.online/images/myimage.png">
+    <meta property="og:image:width" content="853">
+    <meta property="og:image:height" content="1280">
+    <meta property="og:locale" content="en_NG">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact Odusanya Uthman | Web Developer">
     <meta name="twitter:description" content="Hire Odusanya Uthman — full-stack &amp; frontend web developer in Lagos.">
@@ -31,24 +35,57 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "name": "Contact Odusanya Uthman",
-        "url": "https://codedbyuthman.online/contact-us",
-        "description": "Contact page for Odusanya Uthman, full-stack and frontend web developer in Lagos, Nigeria.",
-        "mainEntity": {
-            "@type": "Person",
-            "name": "Odusanya Uthman",
-            "jobTitle": "Full-Stack Web Developer",
-            "email": "odusanyauthman2019@gmail.com",
-            "telephone": "+2348144170968",
-            "url": "https://codedbyuthman.online/",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Ikorodu",
-                "addressRegion": "Lagos",
-                "addressCountry": "NG"
+        "@graph": [
+            {
+                "@type": "ContactPage",
+                "@id": "https://codedbyuthman.online/contact-us#webpage",
+                "name": "Contact Odusanya Uthman",
+                "url": "https://codedbyuthman.online/contact-us",
+                "description": "Contact page for Odusanya Uthman, full-stack and frontend web developer in Lagos, Nigeria.",
+                "inLanguage": "en-NG",
+                "isPartOf": { "@id": "https://codedbyuthman.online/#website" },
+                "breadcrumb": { "@id": "https://codedbyuthman.online/contact-us#breadcrumb" },
+                "mainEntity": { "@id": "https://codedbyuthman.online/#person" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://codedbyuthman.online/contact-us#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://codedbyuthman.online/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Contact",
+                        "item": "https://codedbyuthman.online/contact-us"
+                    }
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://codedbyuthman.online/#person",
+                "name": "Odusanya Uthman",
+                "jobTitle": "Full-Stack Web Developer",
+                "email": "odusanyauthman2019@gmail.com",
+                "telephone": "+2348144170968",
+                "url": "https://codedbyuthman.online/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Ikorodu",
+                    "addressRegion": "Lagos",
+                    "addressCountry": "NG"
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/in/odusanya-uthman-43aab0363/",
+                    "https://www.instagram.com/huthkid.dev",
+                    "https://github.com/Huthkid01"
+                ]
             }
-        }
+        ]
     }
     </script>
     <link rel="stylesheet" href="css/joto-original.css">

@@ -14,6 +14,7 @@
     <meta name="geo.region" content="NG-LA">
     <meta name="geo.placename" content="Ikorodu, Lagos, Nigeria">
     <link rel="canonical" href="https://codedbyuthman.online/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="icon" href="images/favicon-128.png" type="image/png" sizes="128x128">
     <link rel="apple-touch-icon" href="images/favicon-128.png">
     <link rel="manifest" href="site.webmanifest">
@@ -30,9 +31,12 @@
     <meta property="og:description" content="Full-stack and frontend web developer in Lagos. React, TypeScript, PostgreSQL — building modern web products for businesses worldwide.">
     <meta property="og:url" content="https://codedbyuthman.online/">
     <meta property="og:image" content="https://codedbyuthman.online/images/myimage.png">
+    <meta property="og:image:width" content="853">
+    <meta property="og:image:height" content="1280">
     <meta property="og:image:alt" content="Odusanya Uthman — Full-Stack Web Developer">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@huthkid.dev">
     <meta name="twitter:title" content="Odusanya Uthman | Full-Stack &amp; Frontend Web Developer">
     <meta name="twitter:description" content="Full-stack and frontend web developer in Lagos. React, TypeScript, PostgreSQL — modern web apps, SEO &amp; deployment.">
     <meta name="twitter:image" content="https://codedbyuthman.online/images/myimage.png">
@@ -102,7 +106,112 @@
                     "Website Maintenance",
                     "Hosting & Deployment"
                 ],
-                "provider": { "@id": "https://codedbyuthman.online/#person" }
+                "provider": { "@id": "https://codedbyuthman.online/#person" },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Ikorodu",
+                    "addressRegion": "Lagos",
+                    "addressCountry": "NG"
+                },
+                "availableLanguage": ["English"],
+                "priceRange": "$$"
+            },
+            {
+                "@type": "ProfilePage",
+                "@id": "https://codedbyuthman.online/#webpage",
+                "url": "https://codedbyuthman.online/",
+                "name": "Odusanya Uthman | Full-Stack & Frontend Web Developer in Lagos",
+                "description": "Portfolio of Odusanya Uthman — full-stack and frontend web developer in Lagos, Nigeria. React, TypeScript, PostgreSQL, SEO, and deployment for SMEs.",
+                "isPartOf": { "@id": "https://codedbyuthman.online/#website" },
+                "about": { "@id": "https://codedbyuthman.online/#person" },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://codedbyuthman.online/images/myimage.png",
+                    "width": 853,
+                    "height": 1280
+                },
+                "inLanguage": "en-NG",
+                "breadcrumb": { "@id": "https://codedbyuthman.online/#breadcrumb" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://codedbyuthman.online/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://codedbyuthman.online/"
+                    }
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "@id": "https://codedbyuthman.online/#portfolio",
+                "name": "Web Development Portfolio by Odusanya Uthman",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "item": { "@type": "CreativeWork", "name": "Prudence Property", "url": "https://prudenceproperty.com", "description": "Real estate website built with React and TypeScript.", "image": "https://codedbyuthman.online/images/prudence.webp", "author": { "@id": "https://codedbyuthman.online/#person" } } },
+                    { "@type": "ListItem", "position": 2, "item": { "@type": "CreativeWork", "name": "Darboi Consults", "url": "https://www.darboiconsults.com/", "description": "Visa and travel documentation consultancy website.", "image": "https://codedbyuthman.online/images/Darboi.webp", "author": { "@id": "https://codedbyuthman.online/#person" } } },
+                    { "@type": "ListItem", "position": 3, "item": { "@type": "CreativeWork", "name": "SmartCrew Scheduler", "url": "https://smart-crew-scheduler.vercel.app/", "description": "Workforce scheduling web application.", "image": "https://codedbyuthman.online/images/Smartcrew.webp", "author": { "@id": "https://codedbyuthman.online/#person" } } },
+                    { "@type": "ListItem", "position": 4, "item": { "@type": "CreativeWork", "name": "Ramadan Ibadah Tracker", "url": "https://ramadan-ibadah-tracker.vercel.app", "description": "Ramadan worship tracking web app.", "image": "https://codedbyuthman.online/images/ramadan-tracker.webp", "author": { "@id": "https://codedbyuthman.online/#person" } } },
+                    { "@type": "ListItem", "position": 5, "item": { "@type": "CreativeWork", "name": "REEREE.NG", "url": "https://reeree-ng.vercel.app/", "description": "Nigerian web application project.", "image": "https://codedbyuthman.online/images/Reeree.webp", "author": { "@id": "https://codedbyuthman.online/#person" } } },
+                    { "@type": "ListItem", "position": 6, "item": { "@type": "CreativeWork", "name": "USSD Directory", "url": "https://ussd-directory.vercel.app/", "description": "USSD codes directory web app for Nigeria.", "image": "https://codedbyuthman.online/images/USSD-Directory.webp", "author": { "@id": "https://codedbyuthman.online/#person" } } },
+                    { "@type": "ListItem", "position": 7, "item": { "@type": "CreativeWork", "name": "TasteBeta", "url": "https://tastebeta.vercel.app/", "description": "Food and taste discovery web application.", "image": "https://codedbyuthman.online/images/tastebeta.webp", "author": { "@id": "https://codedbyuthman.online/#person" } } }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://codedbyuthman.online/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What services does Odusanya Uthman offer as a web developer in Lagos?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "I offer web and app development with React, TypeScript, and PostgreSQL, technical SEO, website maintenance, ads and marketing landing pages, and hosting and deployment on platforms like Vercel and Netlify."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What technologies do you use to build websites and apps?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "I build with React, TypeScript, Tailwind CSS, PostgreSQL, REST APIs, and modern deployment tools. I focus on fast, mobile-friendly, production-ready products for SMEs and startups."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can you help my business website rank on Google?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. I provide technical and on-page SEO including meta tags, sitemaps, structured data, page speed optimization, and mobile-friendly fixes so search engines can crawl and rank your site more effectively."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you work with clients outside Lagos or Nigeria?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. I work remotely with clients across Nigeria and internationally. Communication is handled via email, WhatsApp, and video calls, and projects are delivered with clear milestones and timelines."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I hire Odusanya Uthman for a web development project?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Use the contact page or email odusanyauthman2019@gmail.com with your project details. I reply within 24–48 hours to discuss scope, timeline, and next steps."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What kind of projects are in your portfolio?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "My portfolio includes real estate sites, travel and visa consultancy platforms, workforce scheduling apps, e-commerce experiences, and tools built with React and TypeScript — view them in the portfolio section on this site."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -112,6 +221,7 @@
     <link rel="stylesheet" href="css/joto-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="my-app">
         <header class="header">
             <div class="primary-navbar tertiary--navbar">
@@ -152,6 +262,7 @@
                                 <li class="navbar__item nav-fade"><a href="#about">About</a></li>
                                 <li class="navbar__item nav-fade"><a href="#services">Services</a></li>
                                 <li class="navbar__item nav-fade"><a href="#portfolio">Portfolio</a></li>
+                                <li class="navbar__item nav-fade"><a href="#faq">FAQ</a></li>
                                 <li class="navbar__item nav-fade"><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </div>
@@ -168,7 +279,7 @@
             </div>
         </div>
 
-        <main>
+        <main id="main-content">
             <section id="home" class="banner-three">
                 <div class="banner-three__slider-w banner-three-alt-w">
                     <div class="swiper banner-three__slider banner-three-alt">
@@ -196,7 +307,7 @@
                                         <div class="row justify-content-end">
                                             <div class="col-12 col-lg-9 offset-lg-3 col-xl-7 offset-xl-4">
                                                 <div class="banner-three__content">
-                                                    <h1 class="light-title hero-typewriter">React, TypeScript, PostgreSQL &amp; production-ready apps</h1>
+                                                    <p class="light-title hero-typewriter" aria-hidden="true">React, TypeScript, PostgreSQL &amp; production-ready apps</p>
                                                     <div class="section__content-cta cta">
                                                         <div class="arrow-wrapper d-none d-md-block"><span class="arrow"></span></div>
                                                         <a class="btn btn--secondary" href="#services">my services<i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
@@ -213,7 +324,7 @@
                                         <div class="row justify-content-end">
                                             <div class="col-12 col-lg-9 offset-lg-3 col-xl-7 offset-xl-4">
                                                 <div class="banner-three__content">
-                                                    <h1 class="light-title hero-typewriter">SEO, ads &amp; end-to-end digital solutions</h1>
+                                                    <p class="light-title hero-typewriter" aria-hidden="true">SEO, ads &amp; end-to-end digital solutions</p>
                                                     <div class="section__content-cta cta">
                                                         <div class="arrow-wrapper d-none d-md-block"><span class="arrow"></span></div>
                                                         <a class="btn btn--secondary" href="contact-us.html">let's talk<i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
@@ -313,7 +424,7 @@
                             <div id="about" class="agency__content section__content">
                                 <span class="sub-title">About me<i class="fa-solid fa-arrow-right"></i></span>
                                 <h2 class="title title-anim">Building products that perform</h2>
-                                <div class="paragraph"><p>I'm Odusanya Uthman, a full-stack web developer based in Lagos, Nigeria. I've deployed 10+ web applications for SMEs using React, TypeScript, Tailwind, and PostgreSQL — from responsive frontends to database-backed full-stack products. At YEHGS (UK) Limited, I work as Web Administrator, keeping products updated, uploading new listings, and ensuring prices stay accurate.</p></div>
+                                <div class="paragraph"><p>I'm <strong>Odusanya Uthman</strong>, a <strong>full-stack and frontend web developer in Lagos, Nigeria</strong>. I've deployed 10+ web applications for SMEs using React, TypeScript, Tailwind, and PostgreSQL — from responsive frontends to database-backed full-stack products. I help businesses with custom websites, SEO, hosting, and ongoing maintenance. At YEHGS (UK) Limited, I work as Web Administrator, keeping products updated, uploading new listings, and ensuring prices stay accurate.</p></div>
                                 <div class="section__content-cta cta-group">
                                     <a class="btn btn--primary text-capitalize" href="images/Uthman_Odusanya_Resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
                                     <a class="btn btn--secondary text-capitalize" href="contact-us.html">Contact Me</a>
@@ -346,16 +457,56 @@
                             <div class="portfolio-three__slider-w">
                                 <div class="swiper portfolio-three__slider">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/prudence.webp" type="image/webp"><img src="images/prudence.png" alt="Prudence Property" loading="lazy" decoding="async" width="2880" height="1497"></picture><div class="portfolio__single-content"><a target="_blank" href="https://prudenceproperty.com"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" href="https://prudenceproperty.com">Prudence Property</a></h4></div></div></div>
-                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/Darboi.webp" type="image/webp"><img src="images/Darboi.png" alt="Darboi Consults — visa and travel documentation" loading="lazy" decoding="async" width="2879" height="1586"></picture><div class="portfolio__single-content"><a target="_blank" href="https://www.darboiconsults.com/"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" href="https://www.darboiconsults.com/">Darboi Consults</a></h4></div></div></div>
-                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/Smartcrew.webp" type="image/webp"><img src="images/Smartcrew.png" alt="SmartCrew Scheduler" loading="lazy" decoding="async" width="2871" height="1578"></picture><div class="portfolio__single-content"><a target="_blank" href="https://smart-crew-scheduler.vercel.app/"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" href="https://smart-crew-scheduler.vercel.app/">SmartCrew Scheduler</a></h4></div></div></div>
-                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/ramadan-tracker.webp" type="image/webp"><img src="images/ramadan-tracker.png" alt="Ramadan Tracker" loading="lazy" decoding="async" width="2787" height="1442"></picture><div class="portfolio__single-content"><a target="_blank" href="https://ramadan-ibadah-tracker.vercel.app"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" href="https://ramadan-ibadah-tracker.vercel.app">Ramadan Ibadah Tracker</a></h4></div></div></div>
-                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/Reeree.webp" type="image/webp"><img src="images/Reeree.png" alt="REEREE.NG" loading="lazy" decoding="async" width="1280" height="690"></picture><div class="portfolio__single-content"><a target="_blank" href="https://reeree-ng.vercel.app/"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" href="https://reeree-ng.vercel.app/">REEREE.NG</a></h4></div></div></div>
-                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/USSD-Directory.webp" type="image/webp"><img src="images/USSD-Directory.png" alt="USSD Directory" loading="lazy" decoding="async" width="2854" height="1590"></picture><div class="portfolio__single-content"><a target="_blank" href="https://ussd-directory.vercel.app/"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" href="https://ussd-directory.vercel.app/">USSD Directory</a></h4></div></div></div>
-                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/tastebeta.webp" type="image/webp"><img src="images/tastebeta.png" alt="TasteBeta" loading="lazy" decoding="async" width="1276" height="696"></picture><div class="portfolio__single-content"><a target="_blank" href="https://tastebeta.vercel.app/"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" href="https://tastebeta.vercel.app/">TasteBeta</a></h4></div></div></div>
+                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/prudence.webp" type="image/webp"><img src="images/prudence.png" alt="Prudence Property real estate website by Odusanya Uthman — React web developer portfolio" loading="lazy" decoding="async" width="2880" height="1497"></picture><div class="portfolio__single-content"><a target="_blank" rel="noopener noreferrer" href="https://prudenceproperty.com" aria-label="View Prudence Property website"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" rel="noopener noreferrer" href="https://prudenceproperty.com">Prudence Property</a></h4></div></div></div>
+                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/Darboi.webp" type="image/webp"><img src="images/Darboi.png" alt="Darboi Consults visa and travel website — Lagos web developer project" loading="lazy" decoding="async" width="2879" height="1586"></picture><div class="portfolio__single-content"><a target="_blank" rel="noopener noreferrer" href="https://www.darboiconsults.com/" aria-label="View Darboi Consults website"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" rel="noopener noreferrer" href="https://www.darboiconsults.com/">Darboi Consults</a></h4></div></div></div>
+                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/Smartcrew.webp" type="image/webp"><img src="images/Smartcrew.png" alt="SmartCrew Scheduler workforce app — full-stack React TypeScript project" loading="lazy" decoding="async" width="2871" height="1578"></picture><div class="portfolio__single-content"><a target="_blank" rel="noopener noreferrer" href="https://smart-crew-scheduler.vercel.app/" aria-label="View SmartCrew Scheduler app"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" rel="noopener noreferrer" href="https://smart-crew-scheduler.vercel.app/">SmartCrew Scheduler</a></h4></div></div></div>
+                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/ramadan-tracker.webp" type="image/webp"><img src="images/ramadan-tracker.png" alt="Ramadan Ibadah Tracker web app — React developer portfolio Nigeria" loading="lazy" decoding="async" width="2787" height="1442"></picture><div class="portfolio__single-content"><a target="_blank" rel="noopener noreferrer" href="https://ramadan-ibadah-tracker.vercel.app" aria-label="View Ramadan Ibadah Tracker"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" rel="noopener noreferrer" href="https://ramadan-ibadah-tracker.vercel.app">Ramadan Ibadah Tracker</a></h4></div></div></div>
+                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/Reeree.webp" type="image/webp"><img src="images/Reeree.png" alt="REEREE.NG web application — Nigerian full-stack developer project" loading="lazy" decoding="async" width="1280" height="690"></picture><div class="portfolio__single-content"><a target="_blank" rel="noopener noreferrer" href="https://reeree-ng.vercel.app/" aria-label="View REEREE.NG website"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" rel="noopener noreferrer" href="https://reeree-ng.vercel.app/">REEREE.NG</a></h4></div></div></div>
+                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/USSD-Directory.webp" type="image/webp"><img src="images/USSD-Directory.png" alt="USSD Directory Nigeria — web app by Odusanya Uthman" loading="lazy" decoding="async" width="2854" height="1590"></picture><div class="portfolio__single-content"><a target="_blank" rel="noopener noreferrer" href="https://ussd-directory.vercel.app/" aria-label="View USSD Directory app"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" rel="noopener noreferrer" href="https://ussd-directory.vercel.app/">USSD Directory</a></h4></div></div></div>
+                                        <div class="swiper-slide"><div class="portfolio__single topy-tilt"><picture><source srcset="images/tastebeta.webp" type="image/webp"><img src="images/tastebeta.png" alt="TasteBeta food discovery web app — React TypeScript portfolio" loading="lazy" decoding="async" width="1276" height="696"></picture><div class="portfolio__single-content"><a target="_blank" rel="noopener noreferrer" href="https://tastebeta.vercel.app/" aria-label="View TasteBeta website"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a><h4><a target="_blank" rel="noopener noreferrer" href="https://tastebeta.vercel.app/">TasteBeta</a></h4></div></div></div>
                                     </div>
                                 </div>
                                 <div class="slide-group"><button type="button" aria-label="previous item" class="slide-btn prev-portfolio"><i class="fa-light fa-angle-left"></i></button><button type="button" aria-label="next item" class="slide-btn next-portfolio"><i class="fa-light fa-angle-right"></i></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="section seo-faq fade-wrapper" aria-labelledby="faq-heading">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-10">
+                            <div class="section__header text-center text-lg-start mb-0">
+                                <span class="sub-title">FAQ<i class="fa-solid fa-arrow-right"></i></span>
+                                <h2 id="faq-heading" class="title title-anim">Frequently asked questions</h2>
+                                <p class="seo-faq__intro">Common questions about hiring a web developer in Lagos — services, tech stack, SEO, and how to start a project.</p>
+                            </div>
+                            <div class="seo-faq__list">
+                                <details class="seo-faq__item">
+                                    <summary>What services does Odusanya Uthman offer as a web developer in Lagos?</summary>
+                                    <p>I offer web and app development with React, TypeScript, and PostgreSQL, technical SEO, website maintenance, ads and marketing landing pages, and hosting and deployment on platforms like Vercel and Netlify.</p>
+                                </details>
+                                <details class="seo-faq__item">
+                                    <summary>What technologies do you use to build websites and apps?</summary>
+                                    <p>I build with React, TypeScript, Tailwind CSS, PostgreSQL, REST APIs, and modern deployment tools. I focus on fast, mobile-friendly, production-ready products for SMEs and startups.</p>
+                                </details>
+                                <details class="seo-faq__item">
+                                    <summary>Can you help my business website rank on Google?</summary>
+                                    <p>Yes. I provide technical and on-page SEO including meta tags, sitemaps, structured data, page speed optimization, and mobile-friendly fixes so search engines can crawl and rank your site more effectively.</p>
+                                </details>
+                                <details class="seo-faq__item">
+                                    <summary>Do you work with clients outside Lagos or Nigeria?</summary>
+                                    <p>Yes. I work remotely with clients across Nigeria and internationally. Communication is handled via email, WhatsApp, and video calls, and projects are delivered with clear milestones and timelines.</p>
+                                </details>
+                                <details class="seo-faq__item">
+                                    <summary>How do I hire Odusanya Uthman for a web development project?</summary>
+                                    <p>Use the <a href="contact-us.html">contact page</a> or email <a href="mailto:odusanyauthman2019@gmail.com">odusanyauthman2019@gmail.com</a> with your project details. I reply within 24–48 hours to discuss scope, timeline, and next steps.</p>
+                                </details>
+                                <details class="seo-faq__item">
+                                    <summary>What kind of projects are in your portfolio?</summary>
+                                    <p>My portfolio includes real estate sites, travel and visa consultancy platforms, workforce scheduling apps, e-commerce experiences, and tools built with React and TypeScript — <a href="#portfolio">view them in the portfolio section</a> on this site.</p>
+                                </details>
                             </div>
                         </div>
                     </div>
@@ -396,6 +547,7 @@
                                     <div class="col-12 col-lg-8">
                                         <div class="footer__copyright-text text-center text-lg-start">
                                             <p>Copyright ©<span id="copyYear"></span>, Odusanya Uthman. All Rights Reserved.</p>
+                                            <p class="footer__seo-links">Full-stack web developer in Lagos, Nigeria — <a href="#services">Web Development</a> · <a href="#portfolio">Portfolio</a> · <a href="#faq">FAQ</a> · <a href="contact-us.html">Contact</a></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-4">
