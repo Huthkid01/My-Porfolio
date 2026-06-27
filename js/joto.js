@@ -4,8 +4,6 @@
 (function () {
     'use strict';
 
-    const HERO_DELAY = 5000;
-
     /* Offcanvas */
     (function initOffcanvas() {
         const menu = document.querySelector('.offcanvas-menu');
@@ -56,13 +54,126 @@
         swiper.slides.forEach((slide) => loadHeroSlideBg(slide));
     }
 
-    function setActiveTab(index) {
+    function setActiveTab(index, progressMs) {
         const items = document.querySelectorAll('.banner-three__slider-progress .single-item');
         items.forEach((el) => el.classList.remove('single-item-active'));
         const active = items[index];
         if (!active) return;
         void active.offsetWidth;
         active.classList.add('single-item-active');
+        if (progressMs) {
+            const bar = active.querySelector('.slider-progress');
+            if (bar) bar.style.setProperty('--hero-progress-ms', `${progressMs}ms`);
+        }
+    }
+
+    const HERO_HOLD_AFTER_TYPE = 2800;
+    const TYPE_CHAR_MS = 42;
+    const TYPE_WORD_PAUSE_MS = 120;
+
+    let heroTypeTimer = null;
+    let heroAdvanceTimer = null;
+
+    function estimateTypingMs(text) {
+        const words = text.split(/\s+/).filter(Boolean);
+        return words.reduce((sum, word) => (
+            sum + word.length * TYPE_CHAR_MS + TYPE_WORD_PAUSE_MS
+        ), 200);
+    }
+
+    function cacheHeroTitles(swiper) {
+        swiper.slides.forEach((slide) => {
+            const h1 = slide.querySelector('.banner-three__content h1.hero-typewriter');
+            if (h1 && !h1.dataset.typewriterText) {
+                h1.dataset.typewriterText = h1.textContent.trim();
+            }
+        });
+    }
+
+    function clearHeroTimers() {
+        if (heroTypeTimer) {
+            clearTimeout(heroTypeTimer);
+            heroTypeTimer = null;
+        }
+        if (heroAdvanceTimer) {
+            clearTimeout(heroAdvanceTimer);
+            heroAdvanceTimer = null;
+        }
+    }
+
+    function getActiveHeroTitle(swiper) {
+        return swiper.slides[swiper.activeIndex]?.querySelector('.banner-three__content h1.hero-typewriter') || null;
+    }
+
+    function typeHeroTitle(h1, onComplete) {
+        if (!h1) {
+            onComplete?.();
+            return;
+        }
+
+        clearHeroTimers();
+
+        const fullText = h1.dataset.typewriterText || h1.textContent.trim();
+        h1.dataset.typewriterText = fullText;
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            h1.innerHTML = fullText.split(/\s+/).map((word) => (
+                `<span class="hero-typewriter__word">${word}</span>`
+            )).join(' ');
+            onComplete?.();
+            return;
+        }
+
+        const words = fullText.split(/\s+/).filter(Boolean);
+        h1.innerHTML = words.map(() => '<span class="hero-typewriter__word"></span>').join('')
+            + '<span class="hero-typewriter__cursor" aria-hidden="true">|</span>';
+
+        const wordEls = h1.querySelectorAll('.hero-typewriter__word');
+        const cursor = h1.querySelector('.hero-typewriter__cursor');
+        let wordIndex = 0;
+        let charIndex = 0;
+
+        const step = () => {
+            if (wordIndex >= words.length) {
+                cursor?.remove();
+                heroTypeTimer = null;
+                onComplete?.();
+                return;
+            }
+
+            const word = words[wordIndex];
+            wordEls[wordIndex].textContent = word.slice(0, charIndex + 1);
+            charIndex += 1;
+
+            if (charIndex >= word.length) {
+                wordIndex += 1;
+                charIndex = 0;
+                heroTypeTimer = setTimeout(step, TYPE_WORD_PAUSE_MS);
+            } else {
+                heroTypeTimer = setTimeout(step, TYPE_CHAR_MS);
+            }
+        };
+
+        step();
+    }
+
+    function runHeroSlideCycle(swiper) {
+        clearHeroTimers();
+        setActiveTab(swiper.realIndex);
+
+        const h1 = getActiveHeroTitle(swiper);
+        const text = h1?.dataset.typewriterText || h1?.textContent.trim() || '';
+        const typeMs = estimateTypingMs(text);
+        const totalMs = typeMs + HERO_HOLD_AFTER_TYPE;
+
+        setActiveTab(swiper.realIndex, totalMs);
+        loadHeroSlideBg(swiper.slides[swiper.activeIndex]);
+
+        typeHeroTitle(h1, () => {
+            heroAdvanceTimer = setTimeout(() => {
+                swiper.slideNext();
+            }, HERO_HOLD_AFTER_TYPE);
+        });
     }
 
     if (typeof Swiper !== 'undefined') {
@@ -72,25 +183,25 @@
             loop: true,
             speed: 1000,
             centeredSlides: true,
-            autoplay: {
-                delay: HERO_DELAY,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
+            autoplay: false,
             on: {
                 init(sw) {
-                    setActiveTab(sw.realIndex);
-                    loadHeroSlideBg(sw.slides[sw.activeIndex]);
+                    cacheHeroTitles(sw);
+                    runHeroSlideCycle(sw);
                     const schedule = window.requestIdleCallback || ((cb) => setTimeout(cb, 1200));
                     schedule(() => preloadRemainingHeroSlides(sw));
                 },
-                slideChange(sw) { setActiveTab(sw.realIndex); },
-                slideChangeTransitionStart(sw) { loadHeroSlideBg(sw.slides[sw.activeIndex]); },
+                slideChangeTransitionEnd(sw) {
+                    runHeroSlideCycle(sw);
+                },
             },
         });
 
         document.querySelectorAll('.banner-three__slider-progress .single-item').forEach((tab, idx) => {
-            tab.addEventListener('click', () => heroSwiper.slideToLoop(idx));
+            tab.addEventListener('click', () => {
+                clearHeroTimers();
+                heroSwiper.slideToLoop(idx);
+            });
         });
     }
 
@@ -183,9 +294,11 @@
             if (title.dataset.split) return;
             title.dataset.split = '1';
             const text = title.textContent.trim();
-            title.innerHTML = text.split('').map((ch) => (
-                ch === ' ' ? ' ' : `<span class="char">${ch}</span>`
-            )).join('');
+
+            title.innerHTML = text.split(/\s+/).filter(Boolean).map((word) => {
+                const chars = word.split('').map((ch) => `<span class="char">${ch}</span>`).join('');
+                return `<span class="word">${chars}</span>`;
+            }).join(' ');
 
             title.querySelectorAll('.char').forEach((char, i) => {
                 gsap.from(char, {

@@ -49,6 +49,82 @@
     cursor: pointer;
 }
 
+.banner-three .single-item-active .slider-progress:before {
+    animation-duration: var(--hero-progress-ms, 6300ms);
+}
+
+.title-anim .word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.title-anim .char {
+    display: inline-block;
+}
+
+.banner-three .banner-three__content h1.hero-typewriter {
+    line-height: 1.15;
+    max-width: 100%;
+}
+
+.hero-typewriter__word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.hero-typewriter__word + .hero-typewriter__word {
+    margin-left: 0.28em;
+}
+
+.hero-typewriter__cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: var(--primary-color);
+    font-weight: 400;
+    animation: hero-cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes hero-cursor-blink {
+    50% { opacity: 0; }
+}
+
+.cta-two__content h2.title-anim {
+    white-space: nowrap;
+    line-height: 1.1;
+    font-size: clamp(22px, 4.2vw, 55px);
+    max-width: none;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.cta-two__content h5 a {
+    text-transform: lowercase;
+}
+
+/* Greeting tag only — not GSAP .word spans inside the heading */
+.cta-two__hello {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    display: inline-block;
+}
+
+.cta-two__content h2.title-anim .word,
+.cta-two__content h2.title-anim .char {
+    padding: 0;
+    background: none;
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    display: inline;
+}
+
+.cta-two__action {
+    margin-top: 32px;
+}
+
 .portfolio__single > img,
 .portfolio__single picture,
 .portfolio__single picture img {
@@ -154,8 +230,41 @@
         text-align: center;
     }
 
-    .cta-two__content h2 {
-        font-size: clamp(28px, 6vw, 42px);
+    .cta-two .cta-two-wrapper {
+        padding: 80px 20px;
+        overflow: visible;
+    }
+
+    .cta-two__content h2,
+    .cta-two__content h2.title-anim {
+        font-size: clamp(18px, 5vw, 48px);
+        margin-top: 24px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+        overflow: visible;
+    }
+
+    .cta-two__content h5 {
+        margin-bottom: 0;
+    }
+
+    .cta-two__action {
+        margin-top: 28px;
+    }
+
+    .cta-two__action .btn.btn--tertiary {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 28px;
+        background-color: var(--primary-color) !important;
+        border: 1px solid var(--primary-color) !important;
+        color: var(--black) !important;
+        text-transform: capitalize;
+    }
+
+    .cta-two__action .btn.btn--tertiary::before {
+        display: none;
     }
 
     .contact-m .contact-m__single {
@@ -309,5 +418,10 @@
 
     .footer__copyright-text p {
         font-size: 14px;
+    }
+
+    .cta-two__content h2.title-anim {
+        font-size: clamp(15px, 4.6vw, 32px);
+        letter-spacing: -0.04em;
     }
 }
